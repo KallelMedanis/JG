@@ -1,0 +1,72 @@
+.recNicoise:hover{
+    background-image: url('../Modal_Img/saladeNicoiseRapide.jpg');
+}
+.recMéditerranéenne:hover{
+    background-image: url('../Modal_Img/saladeMediterraneenne.jpg');
+}
+.recWaldorf:hover{
+    background-image: url('../Modal_Img/saladeWaldorf.jpg');
+}
+.recChévreChaux:hover{
+    background-image: url('../Modal_Img/saladeChevreChaud.jpg');
+}
+.Croissant:hover,#Croissant:checked + label{
+    background-image: url('../Modal_Img/croissant.png');
+}
+.Cake:hover,#Cake:checked + label{
+    background-image: url('../Modal_Img/cake.jpeg');
+}
+.Oeuf_brouillé:hover,#Oeuf_brouillé:checked + label{
+    background-image: url('../Modal_Img/oeuf.jpeg');
+}
+.Granola:hover,#Granola:checked + label{
+    background-image: url('../Modal_Img/granola.jpg');
+}
+.Bruschetta:hover,#Bruschetta:checked + label{
+    background-image: url('../Modal_Img/bruschettas.jpeg');
+}
+.Pancake:hover,#Pancake:checked + label{
+    background-image: url('../Modal_Img/pancake.jpg');
+}
+.ingSupp ul li input:checked +label{
+    border: 8px solid green;
+}
+.healthy:hover,#HEALTHY:checked + label{
+    background-image: url('../Modal_Img/healthy.jpg');
+}
+.gourmet:hover,#GOURMET:checked + label{
+    background-image: url('../Modal_Img/gourmet.jpg');
+}
+.matinal:hover,#MATINAL:checked + label{
+    background-image: url('../Modal_Img/matinal.jpeg');
+}
+.flex ul li input:checked + label{
+    border: 5px solid green;
+}
+.modalPetitDej .flex ul li input:checked + label div span{
+    border-bottom: 1px solid green;
+}
+.modalPetitDej .flex ul li input:checked + label div small{
+    border-top: 1px solid green;
+}
+.Tarte_au_citron:hover,#Tarte_au_citron:checked + label{
+    background-image: url("../Modal_Img/tarteCitron.jpeg");
+}
+.Tiramisu_café:hover,#Tiramisu_café:checked +label{
+    background-image: url('../Modal_Img/tiramisuCafé.jpeg');
+}
+.Fondant_pistache:hover,#Fondant_pistache:checked +label{
+    background-image: url('../Modal_Img/pistache.jpeg');
+}
+.Fondant_Chocolat:hover,#Fondant_Chocolat:checked +label{
+    background-image: url('../Modal_Img/-fondantChocolat.jpeg');
+}
+.Cheesecake_caramel:hover,#Cheesecake_caramel:checked+label{
+    background-image: url('../Modal_Img/cheesecakeCaramel.jpg');
+}
+.Red_velvet:hover,#Red_velvet:checked+label{
+    background-image: url('../Modal_Img/redVelvet.jpg');
+}
+.Tiramisu_spécalus:hover,#Tiramisu_spécalus_nutella:checked+label{
+    background-image: url('../Modal_Img/tiramisuSpeculoos.jpeg');
+}

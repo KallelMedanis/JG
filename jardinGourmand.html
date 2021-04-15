@@ -1,0 +1,588 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Venez et gouter le saveur des salades">
+    <title>Le jardin gourmand</title>
+    <link rel="stylesheet" href="css/pageStyle.css" type="text/css"/>
+    <link rel="stylesheet" href="css/pageAnimation.css" type="text/css"/>
+    <link rel="stylesheet" media="all and (max-width: 640px)" href="css/forMobile.css" />
+    <link rel="stylesheet" href="css/modal.css" type="text/css"/>
+    <link rel="stylesheet" href="css/modalNav.css" type="text/css"/>
+</head>
+<body>
+<header>
+    <div class="headerLeft">
+       <nav>
+           <li><a href="jardinGourmand.html">HOME</a> </li>
+           <li>MENU</li>
+           <li>CONTACT</li>
+           </nav>
+    </div>
+    <p><img class="logo" src="img/Logo.png" alt="Logo_jG"/></p>
+    <div class="headerRight">
+        <nav>
+            <li><a href="https://www.facebook.com/Le-jardin-gourmand-101896735011854/">FACEBOOK</a> </li>
+            <li><a href="https://www.instagram.com/">INSTAGRAM</li>
+            <li><a href="#">LOCALISATION</a></li>
+        </nav> 
+     </div>
+</header>
+<div class="Baniére">
+    <div>
+        <div class="contact">
+            <h1><img class="i" src="img/phone-square-solid.svg"><span>27 538 527</span></h1>
+            <hr>
+            <h1><img class="i" src="img/envelope-open-text-solid.svg"><a href="mailto:lejardingourmand20@gmail.com">lejardingourmand20@gmail.com</a></h1>
+        </div>
+    </div>
+    <h1>Un gout de légende</h1>
+    <div>
+    <p class="gout">Vous avez a disposition largement de quoi concocter vos délicieuses repas salade,riches en gout
+        <br>et en couleurs ! </p></div>
+    <div><p class="Nutriments">Profitez de nos délicieux bols pleins de nutriments et de vitamines</p></div>
+    <button class="commande" type="button">Passer une commande</button>
+    <h2>On dispose de service <span><a href="#Livraison">livraison</a></span></h2>
+</div>
+<div class="baseAndSauce">
+    <div class="bases">
+        <h3>Nos bases</h3>
+        <h4>QUE CHEZ NOUS</h4>
+        <p class="disc">Riz Pates complétes Boulgour,Laiture,Nouille de riz, Vermicelle et Quinoa</p>
+        <p class="p"><img src="img/base.jpg"/></p>
+    </div>
+    <div class="sauces">
+        <p class="p"><img src="img/gga.png"/></p>
+        <h3>Les sauces</h3>
+        <h4>LES SAVEURS</h4>
+        <p class="disc">Sauce vinaigrette classique,miel moutarde a l'ancienne, asiatique,miel balsamique, épicée, grecque, agrumes, pesto et pour votre plaisir sauce 'le jardin gourmand'</p>
+    </div>
+</div>
+<div class="plaisirManger">
+    <h5>Bien manger,<br>un plaisir a partager</h5>
+    <div class="btns">
+        <button class="sldPers" type="button">SALADE PERSONNALISEE</button>
+        <button class="sldRec" type="button">SALADE RECOMMANDEE</button>
+    </div>
+</div>
+<div class="blocs">
+<div class="bloc1">
+    <div class="disBloc">
+        <h3>Les ingrédients</h3>
+        <h4>NOTRE SPECIALITE</h4>
+        <p>Click ci-dessous pour découvrir plus de détails</p>
+        <button class="btnBlov" type="button">Nos ingrédients</button>
+    </div>
+    <div><img src="img/salade.jpg"></div>
+</div>
+<div class="bloc2">
+    <div><img src="img/gastro.png"></div>
+    <div class="disBloc">
+        <h3>Les amateurs de gastronomie</h3>
+        <h4>L'EXCEPTION</h4>
+        <p>On vous offre une large gamme des plats gastronomiques pour faire satisfaire tous nos clients</p>
+        <button class="btnBlov" type="button">Choisissez</button>
+    </div>
+    
+</div>
+<div class="bloc3">
+    <div class="disBloc">
+        <h3>Délicieux desserts</h3>
+        <h4>GOURMANDISES</h4>
+        <p>Ne vous inquiétez pas, GOURMANIDSE mais a rapport qualité prix beaucoup plus mieux</p>
+        <button class="btnBlov" type="button">Découvrez</button>
+    </div>
+    <div><img src="img/dessert.png"></div>
+</div>
+</div>
+<div class="Livraison" id="Livraison">
+    <h6>Débordé</h6>
+    <button class="livraison">Espace livraison</button>
+</div>
+<footer>
+    <nav>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li>MENU</li>
+            <li>CONTACT</li>
+        </ul>
+    </nav>
+    <p><img src="img/Logo.png"/></p>
+</footer>
+<!--modal de nav-->
+<aside class="modalMENU" aria-hidden="true" role="dialog">
+    <div><img src="img/meny.jpg" alt="MENU"></div>
+</aside>
+<aside class="modalLOC" aria-hidden="true" role="dialog">
+    <div><img src="img/loc.png" alt="MENU"></div>
+</aside>
+
+
+
+
+<!--modal des commandes-->
+<!--modal principal-->
+<aside class="modalCommande" role="dialog">   
+    <div class="modalWithBasket">
+        <p class="commandeWord">Commande <img class="panier" src="img/shopping-basket-solid.svg"><span class="nbrCmd">0</span></p>
+        <div class="CommandePanier">
+            <h5>Votre commande</h5>
+            <h4>vous n'avez rien commandé encore</h4>
+        </div>
+<!--modal_Premiére-->
+        <div class="modalGeneral">
+            <h1>Choisissez votre repas</h1>
+            <hr>
+            <div class="flex">
+                <ul>
+                    <li>
+                        <input type="radio" name="S1"  value="SALADE" id="SALADE"/> <label for="SALADE"><div></div><span>SALADE</span></label>
+                        
+                    </li>
+                    <li>
+                        <input type="radio" name="S1" value="PETIT DEJ" id="PETIT DEJ"/> <label for="PETIT DEJ"><div></div><span>PETIT DEJ</span></label>
+                        
+                    </li>
+                    <li>
+                        <input type="radio" name="S1" value="DESSERT" id="DESSERT"/> <label for="DESSERT"><div></div><span>DESSERT</span> </label>
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--modalSaladaPersOuRec-->
+        <div class="modalSalade1">
+            <h1>Personnalisé ou Recommandé</h1>
+            <hr>
+            <div class="flex">
+                <ul>
+                    <li>
+                        <input type="radio" name="S2A" value="personnalisé " id="personnalisé "/> <label for="personnalisé "><div></div><span>personnalisé </span></label>
+                    
+                    </li>
+                    <li>
+                        <input type="radio" name="S2A" value="Recommandé" id="Recommandé"/> <label for="Recommandé"><div></div><span>Recommandé</span></label>
+                    
+                    </li>
+                </ul>
+            </div> 
+        </div>
+        <!--modalPetitDej-->
+        <div class="modalPetitDej">
+            <h1>Choisissez votre petit Déj</h1>
+            <hr>
+            <div class="flex">
+                <ul>
+                    <li>
+                        <input type="radio" name="S22" value="MATINAL " id="MATINAL"/> <label for="MATINAL" class="matinal">
+                            <div>
+                                <span>MATINAL </span>
+                                <div class="ingredPetitDej">
+                                    <h4>Café au choix</h4>
+                                    <h4>Jus frais de saison</h4>
+                                    <h4>eau 0.5L</h4>
+                                    <h4>Cake ou Croissant</h4>
+                                </div>
+                                <small>8DT</small>
+                            </div>
+                        </label>
+                    
+                    </li>
+                    <li>
+                        <input type="radio" name="S22" value="HEALTHY" id="HEALTHY"/> 
+                        <label for="HEALTHY" class="healthy">
+                            <div>
+                                <span>HEALTHY</span>
+                                <div class="ingredPetitDej healthyy">
+                                    <h4>Café au choix</h4>
+                                    <h4>Jus frais de saison</h4>
+                                    <h4>eau 0.5L</h4>
+                                    <h4>Croissant céréal</h4>
+                                    <h4>Bol energitique</h4>
+                                    <h4>Pankacke</h4>
+                                </div>
+                                <small>15DT</small>
+                            </div>
+                        </label>
+                    
+                    </li>
+                    <li>
+                        <input type="radio" name="S22" value="GOURMET" id="GOURMET"/> 
+                        <label for="GOURMET" class="gourmet">
+                            <div>
+                                <span>GOURMET</span>
+                                <div class="ingredPetitDej">
+                                    <h4>Café au choix</h4>
+                                    <h4>Jus frais de saison</h4>
+                                    <h4>eau 0.5L</h4>
+                                    <h4>Bruschetta</h4>
+                                    <h4>oeuf brouillé</h4>
+                                </div>
+                                <small>16DT</small>
+                            </div>
+                        </label>
+                    </li>
+                </ul>
+        </div>
+        <div class="supplument">
+        <h3>SUPPLEMENT :</h3>
+        <div class="ingSupp">
+            <ul>
+                <li>
+                    <input type="checkbox" name="Croissant" id="Croissant"/> <label for="Croissant" class="Croissant"><div></div><span>Croissant </span><small>3DT</small></label>
+                
+                </li>
+                <li>
+                    <input type="checkbox" name="Cake" id="Cake"/> <label for="Cake" class="Cake"><div></div><span>Cake</span><BR><small>3DT</small></label>
+                </li>
+                <li>
+                    <input type="checkbox" name="Oeuf brouillé" id="Oeuf_brouillé"/> <label for="Oeuf_brouillé" class="Oeuf_brouillé"><div></div><span>Oeuf<br>brouillé</span><small class="oeufBrouilleSmall">5DT</small></label>
+                </li>
+                <li>
+                    <input type="checkbox" name="Granola" id="Granola"/> <label for="Granola" class="Granola"><div></div><span>Granola </span><small>6DT</small></label>
+                </li>
+                <li>    
+                    <input type="checkbox" name="Bruschetta" id="Bruschetta"/> <label for="Bruschetta" class="Bruschetta"><div></div><span>Bruschetta</span><small>6DT</small></label>
+                </li>
+                <li>
+                    <input type="checkbox" name="Pancake" id="Pancake"/> <label for="Pancake" class="Pancake"><div></div><span>Pancake</span><small>6DT</small></label>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+    <div class="btnss">
+        <input type="button" value="Envoyer" />
+        <input type="button" value="Ajouter un repas">
+    </div> 
+    </div>  
+    <!--modal dessert-->                        
+    <div class="modalDessert">
+        <h1>Choisissez votre dessert</h1>
+        <hr>
+        <div class="flex">
+            <ul>
+                <li>
+                    <input type="checkbox" name="S23" value="Tarte au citron " id="Tarte_au_citron"/> <label for="Tarte_au_citron" class="Tarte_au_citron"><div></div><span>Tarte au citron<br>5.9DT</span></label>
+                
+                </li>
+                <li>
+                    <input type="checkbox" name="S23" value="Tiramisu café" id="Tiramisu_café"/> <label for="Tiramisu_café" class="Tiramisu_café"><div></div><span>Tiramisu café<BR>6.8DT</span></label>
+                
+                </li>
+                <li>
+                    <input type="checkbox" name="S23" value="Tiramisu spécalus-nutella" id="Tiramisu_spécalus_nutella"/> <label for="Tiramisu_spécalus_nutella" class="Tiramisu_spécalus"><div></div><span>Tiramisu spécalus-nutella<br>8.9DT</span></label>
+                </li>
+                <li>
+                    <input type="checkbox" name="S23" value="Red velvet " id="Red_velvet"/> <label for="Red_velvet" class="Red_velvet"><div></div><span>Red velvet <br>6.9DT </span></label>
+                
+                </li>
+                <li>
+                    <input type="checkbox" name="S23" value="Cheesecake caramel" id="Cheesecake_caramel"/> <label for="Cheesecake_caramel" class="Cheesecake_caramel"><div></div><span>Cheesecake caramel<br>6.9DT</span></label>
+                
+                </li>
+                <li>
+                    <input type="checkbox" name="S23" value="Fondant Chocolat" id="Fondant_Chocolat"/> <label for="Fondant_Chocolat" class="Fondant_Chocolat"><div></div><span>Fondant Chocolat<Br>6.5DT</span></label>
+                </li>
+                <li>
+                    <input type="checkbox" name="S23" value="Fondant pistache" id="Fondant_pistache"/> <label for="Fondant_pistache" class="Fondant_pistache"><div></div><span>Fondant pistache<Br>8.5DT</span></label>
+                </li>
+            </ul>
+    </div>
+    <div class="btnss">
+        <input type="button" value="Envoyer" />
+        <input type="button" value="Ajouter un repas">
+    </div> 
+    </div>
+    <div class="PersSalade">
+        <h1>PERSONNALISER VOTRE SALADE</h1>
+        <hr>
+        <div class="Bases">
+            <h2>Choisissez la base:</h2>
+            <h4>Qu'une seule base</h4>
+            <ul>
+                <li><input type="radio" name="base" value="Riz " id="Riz "/> <label for="Riz "><div></div><span>Riz</span><br><small>3.2DT</small></label></li>
+                <li><input type="radio" name="base" value="Pates complétes " id="Pates_complétes "/> <label for="Pates_complétes "><div></div><span class="Pates_complétes">Pates complétes </span><br><small class="Pates_complétes1">3.2DT</small></label></li>
+                <li><input type="radio" name="base" value="Boulgour " id="Boulgour "/> <label for="Boulgour "><div></div><span>Boulgour </span><br><small>3.2DT</small></label></li>
+                <li><input type="radio" name="base" value="Laitue " id="Laitue "/> <label for="Laitue "><div></div><span>Laitue </span><br><small>3.2DT</small></label></li>
+                <li><input type="radio" name="base" value="Nouille de riz " id="Nouille de riz "/> <label for="Nouille de riz "><div></div><span class="NouilleRiz">Nouille<br> de riz</span><br><small class="NouilleRiz1">4.2DT</small></label></li>
+                <li><input type="radio" name="base" value="Vermicelle " id="Vermicelle "/> <label for="Vermicelle "><div></div><span>Vermicelle </span><br><small>5.6DT</small></label></li>
+                <li><input type="radio" name="base" value="Quinoa" id="Quinoa"/> <label for="Quinoa"><div></div><span>Quinoa</span><br><small>5.9DT</small></label></li>
+            </ul>
+        </div>
+        <div class="Ingrédints">
+            <h2>Choisissez vos ingrédients:</h2>
+            <div class="sup4">
+                <ul>
+                    <li><input type="checkbox" name="Crevettemiel_amande" id="Crevettemiel_amande"/> <label for="Crevettemiel_amande"><div></div><span>Crevette miel-amande </span><br><small>4.8DT</small></label></li>
+                    <li><input type="checkbox" name="CrevetteNature" id="CrevetteNature"/> <label for="CrevetteNature"><div></div><span>Crevette Nature </span><br><small>4DT</small></label></li>
+                    <li><input type="checkbox" name="Crevetteépicé" id="Crevetteépicé"/> <label for="Crevetteépicé"><div></div><span>Crevette épicé </span><br><small>4DT</small></label></li>
+                    <li><input type="checkbox" name="Champignon" id="Champignon"/> <label for="Champignon"><div></div><span class="Champignon">Champignon </span><br><small class="Champignon">4DT</small></label></li>
+
+                </ul>
+            </div>
+            <div class="sup25">
+                <ul>
+                    <li><input type="checkbox" name="Escalope aux herbes" id="Escalope aux herbes"/> <label for="Escalope aux herbes"><div></div><span>Escalope<br> aux herbes </span><br><small>3DT</small></label></li>
+                    <li><input type="checkbox" name="Escalope miel-sésame" id="Escalope miel-sésame"/> <label for="Escalope miel-sésame"><div></div><span>Escalope miel-sésame </span><br><small>3DT</small></label></li>
+                    <li><input type="checkbox" name="Escalope épicé" id="Escalope épicé"/> <label for="Escalope épicé"><div></div><span>Escalope épicé</span><br><small>3DT</small></label></li>
+                    <li><input type="checkbox" name="Fromage/Parmeson/salacube/Mozzarella/stracciatelia" id="Fromage/Parmeson/salacube/Mozzarella/stracciatelia"/> <label for="Fromage/Parmeson/salacube/Mozzarella/stracciatelia"><div></div><span>Fromage/ Parmeson
+                         </span><br><small>3DT</small></label></li> 
+                        <li><input type="checkbox" name="Fromage/Parmeson/salacube/Mozzarella/stracciatelia" id="Fromage/Parmeson/salacube/Mozzarella/stracciatelia"/> <label for="Fromage/Parmeson/salacube/Mozzarella/stracciatelia"><div></div><span>Salacube/ Mozzarella/
+                            stracciatelia </span><br><small>3DT</small></label></li>
+                    <li><input type="checkbox" name="Ananas" id="Ananas"/> <label for="Ananas"><div></div><span>Ananas </span><br><small>2.5DT</small></label></li>
+                    <li><input type="checkbox" name="Thon" id="Thon"/> <label for="Thon"><div></div><span>Thon </span><br><small>2.5DT</small></label></li>
+                    <li><input type="checkbox" name="Tomate séchée" id="Tomate séchée"/> <label for="Tomate séchée"><div></div><span>Tomate séchée</span><br><small>2.5DT</small></label></li>
+                    <li><input type="checkbox" name="Noix" id="Noix"/> <label for="Noix"><div></div><span>Noix</span><br><small>2.5DT</small></label></li>
+                </ul>
+            </div>
+            <div class="egal15">
+                <ul>
+                    <li><input type="checkbox" name="Jambon" id="Jambon"/> <label for="Jambon"><div></div><span>Jambon</span><br><small>1.5DT</small></label></li>
+                    <li><input type="checkbox" name="Ricotta" id="Ricotta"/> <label for="Ricotta"><div></div><span>Ricotta</span><br><small>1.5DT</small></label></li>
+                    <li><input type="checkbox" name="Piment Aubergine" id="Piment Aubergine"/> <label for="Piment Aubergine"><div></div><span>Piment Aubergine</span><br><small>1.5DT</small></label></li>
+                    <li><input type="checkbox" name="Haricot rouge" id="Haricot rouge"/> <label for="Haricot rouge"><div></div><span>Haricot rouge</span><br><small>1.5DT</small></label></li>
+                    <li><input type="checkbox" name="Oignon caramélisé" id="Oignon caramélisé"/> <label for="Oignon caramélisé"><div></div><span>Oignon caramélisé</span><br><small>1.5DT</small></label></li>
+                    <li><input type="checkbox" name="Tomate cerise" id="Tomate cerise"/> <label for="Tomate cerise"><div></div><span>Tomate cerise</span><br><small>1.5DT</small></label></li>
+                    <li><input type="checkbox" name="Mais" id="Mais"/> <label for="Mais"><div></div><span>Mais</span><br><small>1.5DT</small></label></li>
+                    <li><input type="checkbox" name="Dattes et Kiwi" id="Dattes et Kiwi"/> <label for="Dattes et Kiwi"><div></div><span>Dattes et Kiwi</span><br><small>1.5DT</small></label></li>
+                    <li><input type="checkbox" name="Abricots Raisin secs" id="Abricots Raisin secs"/> <label for="Abricots Raisin secs"><div></div><span>Abricots Raisin secs</span><br><small>1.5DT</small></label></li>
+                    <li><input type="checkbox" name="Noisette" id="Noisette"/> <label for="Noisette"><div></div><span>Noisette</span><br><small>1.5DT</small></label></li>
+                    <li><input type="checkbox" name="Pomme de terre épicée" id="Pomme de terre épicée"/> <label for="Pomme de terre épicée"><div></div><span>Pomme de terre épicée</span><br><small>1.5DT</small></label></li>
+                    <li><input type="checkbox" name="Sardine marinée" id="Sardine marinée"/> <label for="Sardine marinée"><div></div><span>Sardine marinée</span><br><small>1.5DT</small></label></li>
+                </ul>
+            </div>
+            <div class="egal1">
+                <ul>
+                    <li><input type="checkbox" name="Betterave" id="Betterave"/> <label for="Betterave"><div></div><span>Betterave</span><br><small>1DT</small></label></li>
+                    <li><input type="checkbox" name="Piment et concombre" id="Piment et concombre"/> <label for="Piment et concombre"><div></div><span>Piment et concombre</span><br><small>1DT</small></label></li>
+                    <li><input type="checkbox" name="Carotte et pomme de terre" id="Carotte et pomme de terre"/> <label for="Carotte et pomme de terre"><div></div><span>Carotte et pomme de terre</span><br><small>1DT</small></label></li>
+                    <li><input type="checkbox" name="Choux vert et Laitue" id="Choux vert et Laitue"/> <label for="Choux vert et Laitue"><div></div><span>Choux vert et Laitue</span><br><small>1DT</small></label></li>
+                    <li><input type="checkbox" name="Lentille" id="Lentille"/> <label for="Lentille"><div></div><span>Lentille</span><br><small>1DT</small></label></li>
+                    <li><input type="checkbox" name="Oeuf poché" id="Oeuf poché"/> <label for="Oeuf poché"><div></div><span>Oeuf poché</span><br><small>1DT</small></label></li>
+                    <li><input type="checkbox" name="Amande éffilé" id="Amande éffilé"/> <label for="Amande éffilé"><div></div><span>Amande éffilé</span><br><small>1DT</small></label></li>
+                </ul>
+            </div>
+            <div class="egal08">
+                <ul>
+                    <li><input type="checkbox" name="Oeuf" id="Oeuf"/> <label for="Oeuf"><div></div><span>Oeuf</span><br><small>0.8DT</small></label></li>
+                    <li><input type="checkbox" name="Olive" id="Olive"/> <label for="Olive"><div></div><span>Olive</span><br><small>0.8DT</small></label></li>
+                    <li><input type="checkbox" name="Cacahouéte" id="Cacahouéte"/> <label for="Cacahouéte"><div></div><span>Cacahouéte</span><br><small>0.8DT</small></label></li>
+                </ul>
+            </div>
+            <div class="egal05">
+                <ul>
+                    <li><input type="checkbox" name="Zesta de citron" id="Zesta de citron"/> <label for="Zesta de citron"><div></div><span>Zesta de citron</span><br><small>0.5DT</small></label></li>
+                    <li><input type="checkbox" name="Graine de lin/Chia" id="Graine de lin/Chia"/> <label for="Graine de lin/Chia"><div></div><span>Graine de lin/Chia</span><br><small>0.5DT</small></label></li>
+                    <li><input type="checkbox" name="Graine de tournesol" id="Graine de tournesol"/> <label for="Graine de tournesol"><div></div><span>Graine de tournesol</span><br><small>0.5DT</small></label></li>
+                    <li><input type="checkbox" name="Sésame" id="Sésame"/> <label for="Sésame"><div></div><span>Sésame</span><br><small>0.5DT</small></label></li>
+                </ul>
+            </div>
+        </div>
+        <div class="Sauce">
+            <h2>Choisissez la sauce</h2>
+            <h4>Maximum 4 doses avec 30ml de dosage en intégralité</h4>
+            <ul>
+                <li><input type="checkbox" name="Sauce Vinaigrette classique" id="Sauce Vinaigrette classique"/> <label for="Sauce Vinaigrette classique"><div></div><span>Sauce Vinaigrette classique</span></label></li>
+                <li><input type="checkbox" name="Sauce miel moutarde a l'ancienne" id="Sauce miel moutarde a l'ancienne"/> <label for="Sauce miel moutarde a l'ancienne"><div></div><span>Sauce miel moutarde a l'ancienne</span></label></li>
+                <li><input type="checkbox" name="Sauce asiatique" id="Sauce asiatique"/> <label for="Sauce asiatique"><div></div><span>Sauce asiatique</span></label></li>
+                <li><input type="checkbox" name="Sauce miel balsamique" id="Sauce miel balsamique"/> <label for="Sauce miel balsamique"><div></div><span>Sauce miel balsamique</span></label></li>
+                <li><input type="checkbox" name="Sauce épicée" id="Sauce épicée"/> <label for="Sauce épicée"><div></div><span>Sauce<br> épicée</span></label></li>
+                <li><input type="checkbox" name="Sauce grecque" id="Sauce grecque"/> <label for="Sauce grecque"><div></div><span>Sauce grecque</span></label></li>
+                <li><input type="checkbox" name="Sauce agrumes" id="Sauce agrumes"/> <label for="Sauce agrumes"><div></div><span>Sauce agrumes</span></label></li>
+                <li><input type="checkbox" name="Sauce pesto" id="Sauce pesto"/> <label for="Sauce pesto"><div></div><span>Sauce<br> pesto</span></label></li>
+                <li><input type="checkbox" name="Sauce 'LE JARDIN GOURMAND'" id="Sauce 'LE JARDIN GOURMAND'"/> <label for="Sauce 'LE JARDIN GOURMAND'"><div></div><span>Sauce<br> LE JARDIN GOURMAND</span></label></li>
+            </ul>
+        </div>
+        <div class="modalDessert1">
+            <h2>Dégustez nos dessert</h2>
+                <div class="flex">
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="S23" value="Tarte au citron " id="Tarte_au_citron "/> <label for="Tarte_au_citron "><div></div><span>Tarte au citron<br>5.9DT</span></label>
+                        
+                        </li>
+                        <li>
+                            <input type="checkbox" name="S23" value="Tiramisu café" id="Tiramisu_café"/> <label for="Tiramisu_café"><div></div><span>Tiramisu café<BR>6.8DT</span></label>
+                        
+                        </li>
+                        <li>
+                            <input type="checkbox" name="S23" value="Tiramisu spécalus-nutella" id="Tiramisu_spécalus-nutella"/> <label for="Tiramisu_spécalus-nutella"><div></div><span>Tiramisu spécalus-nutella<br>8.9DT</span></label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="S23" value="Red velvet " id="Red_velvet "/> <label for="Red_velvet "><div></div><span>Red velvet <br>6.9DT </span></label>
+                        
+                        </li>
+                        <li>
+                            <input type="checkbox" name="S23" value="Cheesecake caramel" id="Cheesecake_caramel"/> <label for="Cheesecake_caramel"><div></div><span>Cheesecake caramel<br>6.9DT</span></label>
+                        
+                        </li>
+                        <li>
+                            <input type="checkbox" name="S23" value="Fondant Chocolat" id="Fondant_Chocolat"/> <label for="Fondant_Chocolat"><div></div><span>Fondant Chocolat<Br>6.5DT</span></label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="S23" value="Fondant pistache" id="Fondant_pistache"/> <label for="Fondant_pistache"><div></div><span>Fondant pistache<Br>8.5DT</span></label>
+                        </li>
+                    </ul>
+        </div>
+            
+    </div>
+    <div class="btnss">
+        <input type="button" value="Envoyer" />
+        <input type="button" value="Ajouter un repas"> 
+    </div>
+    
+    </div>
+    <div class="RecSalade">
+        <h1>Nos salades pour vous</h1>
+        <hr>
+        <div class="nosSaladeRec">
+            <div class="recChévreChaux">
+                <h2>Salade au chèvre chaud</h2>
+                <div class="ingrédiantRec">
+                    <h4>crottins de chèvre</h4>
+                    <h4>poignée de pousses d'épinards</h4>
+                    <h4>poignée de pignons</h4>
+                    <h4>café de moutarde</h4>
+                    <h4>sel, poivre</h4>
+                    <h4>laitue romaine</h4>
+                    <h4>barquette de tomates cerises</h4>
+                    <h4>soupe d'huile d'olive</h4>
+                    <h4>soupe de vinaigre balsamique</h4>
+                </div>
+                <div class="prixRec">
+                <hr>
+                <small>22DT</small>
+                </div>
+            </div>
+            <div class="recMéditerranéenne">
+                <h2>Salade méditerranéenne</h2>
+                <div class="ingrédiantRec">
+                    <h4>riz</h4>
+                    <h4>olives noires dénoyautées</h4>
+                    <h4>poivron rouge</h4>
+                    <h4>œufs</h4>
+                    <h4>citron</h4>
+                    <h4>boîte de fonds d’artichauts</h4>
+                    <h4>olives vertes dénoyautées</h4>
+                    <h4>saucisses de Francfort</h4>
+                    <h4>huile d’olive</h4>
+                    <h4>sel, poivre</h4>
+                </div>
+                <div class="prixRec">
+                    <hr>
+                    <small>25DT</small>
+                </div>
+            </div>
+            <div class="recWaldorf ">
+                <h2>Salade Waldorf</h2>
+                <div class="ingrédiantRec">
+                    <h4>laitue</h4>
+                    <h4>céleri blanc</h4>
+                    <h4>soupe de mayonnaise</h4>
+                    <h4>grappe de raisin noir</h4>
+                    <h4>sel, poivre</h4>
+                    <h4>pommes acidulées bio</h4>
+                    <h4>citron</h4>
+                    <h4>cerneaux de noix</h4>
+                    <h4>jus d'un citron</h4>
+                </div>
+                <div class="prixRec">
+                    <hr>
+                    <small>28DT</small>
+                    </div>
+            </div>
+            <div class="recNicoise">
+                <h2>Salade niçoise</h2>
+                <div class="ingrédiantRec">
+                    <h4>oeufs</h4>
+                    <h4>feuilles de mesclun et de basilic frais</h4>
+                    <h4>boîte 200 g de thon égoutté</h4>
+                    <h4>olives noires</h4>
+                    <h4>soupe d'huile d'olive</h4>
+                    <h4>café de moutarde</h4>
+                    <h4>tomates cerises</h4>
+                    <h4>poivron vert</h4>
+                    <h4>boîte d'anchois</h4>
+                    <h4>radis</h4>
+                    <h4>soupe de vinaigre de vin</h4>
+                    <h4>sel, poivre</h4>
+                </div>
+                <div class="prixRec">
+                    <hr>
+                    <small>35DT</small>
+                    </div>
+            </div>
+        </div>
+        <div class="btnss">
+            <input type="button" value="Envoyer" />
+            <input type="button" value="Ajouter un repas"> 
+        </div>
+    </div>
+
+    <!--modalDePayement-->
+    <div class="lastModal">
+        <h1>Finaliser votre commande</h1><hr>
+    <div class="lastModalWithoutTitle">
+        <div class="ticket">
+            <h3>Votre ticket</h3>
+            <hr>
+            <div class="insideTicket"></div>
+        </div>
+        <div class="proc">
+            <h3>Mode de livraison</h3>
+            <hr>
+            <div class="insideProc">
+                <div>
+            <input type="radio" name="livraison" value="chez nous" id="chez_nous"><label class="chez_nous" for="chez_nous">Chez nous</label>
+            <input type="radio" name="livraison" value="A domicile" id="domicile"><label class="domicile" for="domicile">A domicile</label></div>
+            <label for="tel">Numéro de téléphone</label><input type="tel" id="tel">
+            <label for="dateAndHour">Date et heure de livraison</label><input type="datetime-local" id="dateAndHour">
+            <div class="lastLivr">
+                <div class="adresse"></div>
+                <h4 class="hAdress">Votre adresse</h4>
+                <input type="button" class="vous_localiser" value="Laissez nous vous localiser">
+                <input type="button" class="utiliserMap" value="Utilisez la map">
+                <p class="map">L'adresse de livraison est</p>
+                <div class="livreur">
+                    <p></p>
+                    <p></p>
+                    <P></P>
+                    <p></p>
+                </div>
+            </div>
+            <p>L'adresse de livraison est</p>
+            <p>L'adresse de livraison est</p>
+            <p>L'adresse de livraison est</p>
+            <p>L'adresse de livraison est</p>
+            <p>L'adresse de livraison est</p>
+            <p>L'adresse de livraison est</p>
+            <p>L'adresse de livraison est</p>
+            <input type="submit" class="cmd" value="passer la commande">
+        </div>
+    </div>
+
+    </div>
+</div>
+</div>
+<div class="Pagination">
+    <ul>
+        <li class="logoPag"><span></span><h6>Accueil</h6></li>
+        <div class="line modalSaladePag"></div>
+        <li class="modalSaladePag"><span></span><h6>Votre Salade</h6></li>
+        <div class="line RecSaladePag"></div>
+        <li class="RecSaladePag"><span></span><h6>Nos salades</h6></li>
+        <div class="line PersSaladePag"></div>
+        <li class="PersSaladePag"><span ></span><h6>Personnaliser votre salade</h6></li>
+        <div class="line modalPetitDejPag"></div>
+        <li class="modalPetitDejPag"><span ></span><h6>Petit Déj</h6></li>
+        <div class="line dessertPag"></div>
+        <li class="dessertPag"><span></span><h6>Dessert</h6></li>
+        <div class="line lastPag"></div>
+        <li class="lastPag"><span></span><h6>Finaliser la commande</h6></li>
+    </ul>
+</aside>
+</body>
+</html>

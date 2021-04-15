@@ -1,0 +1,19 @@
+Bonjour!
+Je suis un étudiant de l'école nationale d'électronique et des télécommunications de Sfax
+3éme année licence et je dispose d'un projet de PFA "application web développée pour un restaurant"
+
+Pour expliquer brièvement mon projet, nous avons préparé un plan pour une application web
+-L'application Web affichera une présentation d'un restaurant et de ses produits ainsi que les services fournis par le restaurant dont 
+le processus de la commande sera bien détaillé
+L'application Web dispose en plus de trois espaces : client , livreur et gérant
+ *L'espace client sera destiné pour passer les commandes demandées.
+ *L'espace livreur sera destiné à notifier le livreur à chaque commande passée par un client.
+ *L'espace gérant sera destiné à gérer les commandes et préparer les plats avant de les livrer.
+-L'application Web sera développée par les langages HTML CSS JS node.js et MySQL pour gérer la Base de données
+
+je suis en train de le préparer et 
+je m'intéresse que par le code de l'application  mais j'ai beaucoup des idées flous et j'ai du mal au niveau de la mise en production 
+et les étapes que je dois suivre pour satisfaire mon client
+J'ai du mal aussi au niveau des procédures et les promesses qu'on doit s'engager avec le client
+Je veux savoir si vous pouvez m'aider et si mon profil sera utile pour vous rejoindre
+Cordialement 

@@ -1,0 +1,269 @@
+﻿header p{
+    transform: translateX(40px);
+    display: block;
+    z-index: 2;
+}
+*{
+    font-family: Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+p{
+    line-height: 1.4;
+    font-size: 1.5em;
+}
+body
+{
+    margin: auto;
+    width: 90%;
+}
+header{
+    position: relative;
+    padding-left: 0px;
+    align-items:center;
+    display: flex;
+    justify-content: space-around;
+}
+.headerLeft>nav,.headerRight>nav{
+    display: flex;
+    padding-top: 10%;
+    font-size: 1.4em;
+    color: slategray;
+}
+a{
+    text-decoration: none;
+    color: gray;
+}
+.headerLeft>nav li,.headerRight>nav li{
+    cursor: pointer;
+    list-style-type:none;
+    margin: 0px 15px;
+    transform: translateY(-10px);
+}
+.headerLeft{
+    transform: translateX(70px);
+    position: relative;
+}
+.headerRight{
+    transform: translate(-05px,-5px)
+}
+.Baniére{
+    position: relative;
+    height:400px;
+    text-align: center;
+    color: white;
+ 
+}
+.Baniére p{
+    display: inline;
+    background-color: white;
+    color: yellowgreen;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.Baniére div{
+    margin: 20px 0;
+}
+.Baniére::before{
+    position: absolute;
+	content: '';
+    background-image: url('../img/bani.jpg');;
+    background-size: cover;
+    background-position: center;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	z-index: -1;
+	filter: grayscale(80%);
+}
+h1{
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    font-size: 5em;
+    color:forestgreen;
+    background-color: white;
+    font-weight: normal;
+    margin-top: 20px;
+    z-index: -2;
+}
+.gout{
+    padding:10px 0 ;
+}
+.commande{
+    background-color:gold;
+    padding: 20px 50px;
+    outline: none;
+    border-radius: 50px;
+    color: rgb(204, 45, 45);
+    font-size: 1.3em;
+    font-weight: bold;
+    cursor: pointer;
+}
+h2{
+    color: rgb(204, 45, 45);
+    font-size: 1.6em;
+}
+span a{
+    color: rgb(14, 105, 22);
+    text-decoration: none;
+    background-color: white;
+}
+.baseAndSauce{
+    width: 83%;
+    display: flex;
+    margin:30px auto;
+    justify-content: space-between;
+    text-align: center;
+}
+.bases,.sauces{
+    width: 100%;
+}
+.bases>.p,.sauces>.p{
+    width: 100%;
+}
+h3{
+    font-size: 3em;
+    font-weight: normal;
+}
+h4{
+    color: chocolate;
+    font-weight: normal;
+    font-size: 1.1em;
+    margin:5px 0;
+}
+.disc{
+    color: slategrey;
+    margin: auto;
+    font-size: 1em;
+    margin-top: 5px;
+    width: 430px;
+}
+.plaisirManger{
+    background-image: url('../img/manger.png');
+    background-size: cover;
+    height: 400px;
+}
+.plaisirManger h5{
+    padding-top: 30px;
+    font-weight: normal;
+    width: 70%;
+    margin:auto;
+    color: white;
+    text-align: center;
+    font-size: 5em;
+    font-family: URW Chancery L, cursive;
+}
+.btns{
+    text-align: center;
+    margin-top: 50px;
+}
+.btns button{
+    height: 50px;
+    width: 250px;
+    border-radius: 18px;
+    color: white;
+    background-color:firebrick;
+    margin: 0 40px;
+    font-weight: bold;
+    border:none;
+}
+.blocs{
+    background-color:lavender;
+    margin:20px 0;
+    padding-top: 10px;
+}
+.bloc1,.bloc2,.bloc3{
+    line-height: 1.2;
+    height: 496px;
+    margin:auto;
+    max-width:976px;
+    background-color: white;
+    display: flex;
+    text-align: center;
+}
+.bloc2,.bloc3{
+transform: translateY(-15px);
+}
+.bloc3{
+    transform: translateY(-30px);
+}
+.bloc1 h3,.bloc2 h3,.bloc3 h3{
+    font-size: 3em;
+    }
+.bloc1 div,.bloc2 div,.bloc3 div{
+    width: 488px;
+    margin: auto 0;
+}
+.disBloc{
+    transform: translateY(-50px)
+}
+.disBloc p{
+    padding: 0 40px;
+    font-size: 1em;
+    color: gray;
+}
+.disBloc button{
+    transform: translateY(30px);
+    width: 200px;
+    height: 50px;
+    background-color: black;
+    font-size: 1.2em;
+    color: white;
+    outline: none;
+}
+.Livraison{
+    height: 384px;
+    background-image: url('../img/service_liv.PNG');
+    background-size: cover;
+
+}
+.Livraison h6{
+    color: white;
+    text-align: center;
+    padding: 100px 0 30px 0;
+    font-size: 5em;
+    font-weight: normal;
+}
+.livraison{
+    position: relative;
+    right: -50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 60px;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+footer nav ul{
+    font-size: 1.3em;
+    color: gray;
+    justify-content: center;
+    display: flex;
+
+}
+footer{
+    margin-top:30px ;
+}
+footer nav ul li{
+    list-style-type: none;
+    margin: 0 40px;
+    cursor: pointer;
+}
+
+
+footer p{
+    padding-top: 30px;
+text-align: center;
+}
+.bases .p{
+    margin-top: 25px;
+}
+button{
+    cursor: pointer;
+}
+

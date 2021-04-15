@@ -1,0 +1,712 @@
+.modalCommande{
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+}
+.panier{
+    width: 50px;
+    margin-left: 10px;
+}
+.nbrCmd{
+    font-size: 0.8em;
+    background-color: red;
+    padding:0 5px;
+    border-radius:50px;
+    position:absolute;
+    right: 2px;
+    bottom: 2px;
+}
+.commandeWord{
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 6px;
+    color: gold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border:3px solid gold;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    background-color: white;
+}
+.modalWithBasket{
+    overflow: auto;
+    position: relative;
+    top: 20px;
+    width: 90%;
+    max-width: 90%;
+    padding: 20px;
+    background-color: transparent;
+    height: 89%;
+}
+
+.modalCommande h1{
+    font-size: 3.7em;
+    margin:-15px 0 3px 0;
+    padding-left: 20px;
+    color:brown;
+    background-color: transparent;
+    text-shadow: -1px -1px 0 gold, 1px -1px 0 gold, -1px 1px 0 gold, 1px 1px 0 gold;
+
+}
+.modalGeneral .flex{
+    position: absolute;
+    top: 10%;
+    right: 0;
+    height: 90%;
+    width: 100%;
+    display: flex;
+}
+.modalPetitDej .flex ul,.modalSalade1 .flex ul,.modalGeneral .flex ul,.lastModal .flex ul,.PersSalade .flex ul{
+    margin: auto;
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    text-shadow: -1px -1px 0 brown, 1px -1px 0 brown, -1px 1px 0 brown, 1px 1px 0 brown;
+    flex-wrap: wrap;
+}
+.flex ul li{
+    list-style-type: none;
+    font-size: 0.8em;
+    color: white;
+}
+.flex ul li label{
+    display: inline-block;
+    width: 210px;
+    height: 210px;
+    border:3px solid gold;
+    border-radius: 20%;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.flex ul li label span{
+    font-size: 2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.modalPetitDej .flex span{
+    position: absolute;
+    top: 25px;
+    border-bottom: 2px solid gold;
+    width: 100%;
+}
+.modalPetitDej .flex label{
+    height: 350px;
+    width: 250px;
+    border-radius: 0;
+    position: relative;
+}
+.modalPetitDej .flex small{
+    position: absolute;
+    bottom: 0;
+    font-size: 2.5em;
+    color: orange;
+    border-top: 2px solid gold;
+    width: 100%;
+    transform: translateX(-50%);
+}
+.ingredPetitDej h4{
+    color: gold;
+    font-size: 1.8em;
+}
+.ingredPetitDej{
+    width: 100%;
+    position: absolute;
+    right: 50%;
+    transform: translate(50%,50%);
+    line-height: 2em;
+}
+
+
+.flex ul li label{
+   background-color: rgba(218,165,32,0.4);
+    ;
+}
+.healthyy{
+    transform: translate(50%,35%);
+}
+
+.modalGeneral::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-size:100%;
+    background-image: url('../img/arriére1.jpg');
+    background-position: bottom;
+    z-index: -1;
+    filter: grayscale(70%);
+}
+.modalSalade1::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-size:cover;
+    background-image: url('../img/arriéreSalade.jpg');
+    z-index: -1;
+    filter: grayscale(70%);
+}
+.modalPetitDej::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-size:cover;
+    background-image: url('../img/arriérePetitDej.jpg');
+    z-index: -1;
+    filter: grayscale(70%);
+}
+.modalSalade1 .flex{
+    position: absolute;
+    width: 100%;
+    height: 88%;
+    left: 0;
+    top: 12%;
+}
+.modalSalade1 .flex ul{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.modalPetitDej .flex{
+    position: absolute;
+    left: 0;
+    height: 65%;
+    width: 100%;
+
+}
+.modalPetitDej .flex ul{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.supplument{
+    position: absolute;
+    bottom: 40px;
+    left: 1%;
+    display: flex;
+    color: white;
+    text-shadow: -1px -1px 0 orange, 1px -1px 0 orange, -1px 1px 0 orange, 1px 1px 0 orange;
+    display: flex;
+    align-items: center;
+    width: 70%;
+}
+.ingSupp ul{
+    display: flex;
+    list-style-type: none;
+    width:120%;
+    justify-content: space-around;
+    transform: translateY(10px);
+
+}
+.ingSupp label{
+    cursor: pointer;
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    border: 8px solid white;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgba(218,165,32,0.6);
+}
+.ingSupp small{
+    position: relative;
+    bottom:-35%;
+}
+.ingSupp .oeufBrouilleSmall{
+    position: relative;
+    bottom:-25%; 
+}
+.supplument h3{
+    font-size: 2em;
+    transform: translateY(10px);
+}
+.ingSupp label span{
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.btnss{
+    position: absolute;
+    display: flex;
+    width: 17.5%;
+    min-width: 17%;
+    flex-direction: column;
+    z-index: 5;
+    background-color: transparent;
+    position: absolute;
+    right: 2%;
+    bottom: 20px;
+    height: 110px;
+    justify-content: space-between;
+}
+.btnss input{
+    cursor: pointer;
+    outline: none;
+    display: inline-block;
+    border:2px solid gold;
+    padding: 10px;
+    font-size: 1.4em;
+    color: gold;
+    text-shadow: -1px -1px 0 #856b44, 1px -1px 0 #856b44, -1px 1px 0 #856b44, 1px 1px 0 #856b44;
+}
+.modalDessert::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-position: left;
+    background-size:cover;
+    background-image: url('../img/arriéreDessert.jpg');
+    z-index: -1;
+    filter: grayscale(70%);
+}
+.modalDessert .flex{
+    position: absolute;
+    height: 86%;
+    width: 100%;
+    top: 14%;
+    left: 0;
+}
+.modalDessert .flex ul{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    text-shadow: -1px -1px 0 brown, 1px -1px 0 brown, -1px 1px 0 brown, 1px 1px 0 brown;
+}
+.modalDessert .flex label{
+    cursor: pointer;
+    width: 238px;
+    height: 238px;
+    margin-right: 20px;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+.lastModal h1{
+    color: goldenrod;
+    margin: 8px 0;
+    text-shadow: -1px -1px 0 brown, 1px -1px 0 brown, -1px 1px 0 brown, 1px 1px 0 brown;
+}
+.lastModalWithoutTitle{
+    display: flex
+}
+.lastModal h3{
+    font-size: 1.8em;
+    
+}
+.ticket{
+    width: 48%;
+    margin: 20px;
+    padding: 0 20px;
+    border-right: 1px solid gray;
+}
+.proc{
+    width: 48%;
+    margin: 20px 0;
+}
+.insideProc{
+    display: flex;
+    flex-direction: column;
+}
+.chez_nous{
+    display: inline-block;
+    border:rgb(56, 197, 216) 2px solid;
+    margin: 10px 20px;
+    padding: 20px;
+    border-radius: 30px;
+}
+.domicile{
+    display: inline-block;
+    border:red 2px solid;
+    margin: 10px 20px;
+    padding: 20px;
+    border-radius: 30px;
+    
+}
+.insideProc label{
+    font-size: 1.3em;
+}
+#tel,#dateAndHour{
+    height: 30px;
+    font-size: 20px;
+}
+.hAdress{
+    color: black;
+    font-size: 20px;
+    margin-left: 10px;
+}
+.lastLivr{
+    margin: 10px 0;
+    border:2px solid gray;
+    padding-bottom: 10px;
+}
+.map{
+    display: none;
+}
+.vous_localiser,.utiliserMap{
+    padding: 10px;
+    margin: 5px 10px;
+    border:2px solid red;
+    background-color: white;
+    border-radius: 25px;
+    font-size: 1.2em;
+}
+.cmd{
+    position: relative;
+    left: 67%;
+    padding: 12px;
+    width: 200px;
+    border:2px solid green;
+    color: green;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: white;
+}
+/*Salade personnalisée*/
+.PersSalade .btnss{
+    position: relative;
+    left: 80%;
+    top: 0px;
+}
+.PersSalade .btnss input{
+    margin-right: -10px;
+}
+.PersSalade h1{
+    font-size: 320%;
+    margin:-5px 0 5px 0;
+}
+.PersSalade h2{
+padding:10px 0 0 20px;
+text-shadow: -1px -1px 0 gold, 1px -1px 0 gold, -1px 1px 0 gold, 1px 1px 0 gold;
+font-family: Helvetica, sans-serif;
+letter-spacing: 0.15em;
+}
+.PersSalade h4{
+    margin-left: 20px;
+}
+.PersSalade li{
+list-style-type: none;
+}
+.Bases{
+padding-bottom: 1px;
+margin: 10px 0;
+background-color:rgba(110, 117, 13, 0.342);
+}
+.Bases ul{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+.Bases ul li{
+    background-color: yellow;
+    width: 138px;
+    height:138px;
+    border-radius: 50%;
+    border:8px solid white;
+    font-size: 1.2em;
+}
+.Bases ul li span,.Bases ul li small{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    top: 30%;
+}
+.Pates_complétes,.NouilleRiz{
+    display: inline-block;
+transform: translateY(-30%);
+}
+.Pates_complétes1,.NouilleRiz1{
+    display: inline-block;
+transform: translateY(-70%);
+}
+.Ingrédints{
+    background-color: rgb(133,0,27);
+    margin-bottom: 20px;
+}
+.sup25{
+    background-color: rgb(216,82,83);
+}
+.egal15{
+    background-color: rgb(242,135,130);
+}
+.egal1{
+    background-color: rgb(255,176,169);
+}
+.egal08{
+    background-color: rgb(254,210,201);
+}
+.egal05{
+    background-color: rgb(254,227,227);
+}
+.Ingrédints div ul,.Sauce ul{
+display: flex;
+justify-content: space-around;
+text-align: center;
+flex-wrap: wrap;
+padding: 20px 0;
+}
+
+.Ingrédints div ul li,.Sauce li,.Bases li{
+    cursor: pointer;
+    background-color: yellow;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    font-size: 1.2em;
+    text-shadow: -1px -1px 0 WHITE, 1px -1px 0 WHITE, -1px 1px 0 WHITE, 1px 1px 0 WHITE;
+    border:8px solid white;
+    margin-top: 10px;
+}
+.Ingrédints div ul li span,.Ingrédints div ul li small,.Sauce ul li span,.Sauce ul li small{
+    cursor: pointer;
+    position: relative;
+    top: 20%;
+}
+.Sauce li{
+    width: 150px;
+    height: 150px;
+}
+.Champignon{
+    display: inline-block;
+    transform: translateY(17px);
+}
+.Sauce{
+    background-color:rgb(255, 166, 0);
+}
+.modalDessert1{
+    margin-top: 20px;
+    background-image: url('../img/arriéreDessert.jpg');
+}
+.modalDessert1 .flex ul{
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px auto;
+}
+.modalDessert1 .flex ul li{
+    margin: 0 10px;
+}
+.modalWithBasket{
+    background-color: white;
+    z-index: -2;
+}
+
+
+.RecSalade .btnss{
+    flex-direction: row;
+    position:absolute;
+    bottom: 10px;
+    right: 170px;
+    height: 50px;
+}
+.RecSalade .btnss input{
+    margin-left: 15px;
+    height: 50px;
+}
+.nosSaladeRec{
+    margin: auto;
+    position:absolute;
+    height: 90%;
+    top: 7%;
+    right: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.recChévreChaux,.recMéditerranéenne,.recWaldorf,.recNicoise{
+    margin: auto;
+    height: 80%;
+    border: 4px solid gold;
+    display: flex;
+    flex-direction: column;
+    width: 22%;
+    text-align: center;
+    position: relative;
+}
+.recNicoise .ingrédiantRec h4{
+    font-size: 75%;
+}
+.recWaldorf h2,.recNicoise h2{
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+    position:absolute;
+    height: 10%;
+    border-bottom: 1px solid gold;
+    padding-top: 5px;
+    background-color: rgba(218,165,32,0.4);
+}
+.recChévreChaux h2,.recMéditerranéenne h2{
+    overflow: auto;
+    font-size: 1.05em;
+    padding-top: 7px;
+    border-bottom: 1px solid gold;
+    height: 10%;
+    position:absolute;
+    top: 0;
+    width: 100%;
+}
+.ingrédiantRec{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position:absolute;
+    top:10%;
+    height: 80%;
+    overflow: auto;
+}
+.ingrédiantRec h4{
+    font-size: 0.9em;
+    font-weight: bold;
+}
+.prixRec{
+    position: absolute;
+    top: 90%;
+    height: 10%;
+    width: 100%;
+    position: relative;
+}
+.prixRec small{
+    position:absolute;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding-top: 5px;
+    font-size: 1.5em;
+    color: brown;
+    font-weight: bold;
+    border-top: 1px solid gold;
+    width: 100%;
+}
+.RecSalade::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-size:100%;
+    background-image: url('../img/arriéreRecSalade.jpg');
+    background-position: bottom;
+    z-index: -1;
+    filter: grayscale(70%);
+}
+.RecSalade div div{
+    cursor: pointer;
+    background-color: rgba(218,165,32,0.4);
+}
+.RecSalade{
+    text-shadow: -1px -1px 0 gold, 1px -1px 0 gold, -1px 1px 0 gold, 1px 1px 0 gold;
+}
+input{
+    display: none;
+}
+.RecSalade,
+.lastModal,
+.modalSalade1,
+.modalGeneral,
+.modalPetitDej,
+.PersSalade{
+    display: none;
+}
+.modalSaladePag,.RecSaladePag,.PersSaladePag,.modalPetitDejPag{
+    display: none;
+}
+.Pagination{
+    position: absolute;
+    width: 50%;
+    bottom: -18px;
+    z-index: 9;
+}
+.Pagination ul{
+    display: flex;
+    justify-content: center;
+}
+
+.Pagination ul li{
+    position: relative;
+    height: 90px;
+    list-style-type: none;
+    font-size: 1.2em;
+}
+.line{
+    position: relative;
+    top: 27px;
+    height: 4px;
+    background-color: coral;
+    width: 100%;
+}
+.Pagination ul li span{
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+    z-index: 5;
+}
+.Pagination ul li h6{
+    color: coral;
+    text-align: center;
+    overflow: visible;
+    position: absolute;
+    left: -50%;
+    transform: translateX(-50%);
+    top: 55px;
+    width: 300px;
+}
+.CommandePanier{
+    position: absolute;
+    right:30px;
+    top: 72px;
+    width: 400px;
+    background-color: white;
+    z-index: 58;
+    border: 2px solid gold;
+    display: none;
+}
+.commandeWord:hover + .CommandePanier{
+    display: block;
+}
+
+.CommandePanier h5{
+    text-align: center;
+    color: gold;
+    font-size: 1.3em;
+    font-weight: normal;
+    padding:7px 0;
+    border-bottom: 2px solid gold;
+}
+.CommandePanier h4{
+    border: 2px solid chocolate;
+    text-align: center;
+    margin:10px;
+}

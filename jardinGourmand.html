@@ -43,7 +43,7 @@
     <p class="gout">Vous avez a disposition largement de quoi concocter vos délicieuses repas salade,riches en gout
         <br>et en couleurs ! </p></div>
     <div><p class="Nutriments">Profitez de nos délicieux bols pleins de nutriments et de vitamines</p></div>
-    <button class="commande" type="button">Passer une commande</button>
+    <button class="commande Modal" id="modalCommande" type="button">Passer une commande</button>
     <h2>On dispose de service <span><a href="#Livraison">livraison</a></span></h2>
 </div>
 <div class="baseAndSauce">
@@ -124,8 +124,9 @@
 
 <!--modal des commandes-->
 <!--modal principal-->
-<aside class="modalCommande" role="dialog">   
-    <div class="modalWithBasket">
+<aside class="modalCommande" aria-hidden="true" role="dialog" aria-modal="false" style="display: none;">   
+    <div class="modalWithBasket js-modal-stop">
+        <button class="close-button">fdgxfX</button>
         <p class="commandeWord">Commande <img class="panier" src="img/shopping-basket-solid.svg"><span class="nbrCmd">0</span></p>
         <div class="CommandePanier">
             <h5>Votre commande</h5>
@@ -138,15 +139,15 @@
             <div class="flex">
                 <ul>
                     <li>
-                        <input type="radio" name="S1"  value="SALADE" id="SALADE"/> <label for="SALADE"><div></div><span>SALADE</span></label>
+                        <input type="radio" name="S1"  value="SALADE" id="modalSalade1"/> <label for="modalSalade1"><div></div><span>SALADE</span></label>
                         
                     </li>
                     <li>
-                        <input type="radio" name="S1" value="PETIT DEJ" id="PETIT DEJ"/> <label for="PETIT DEJ"><div></div><span>PETIT DEJ</span></label>
+                        <input type="radio" name="S1" value="PETIT DEJ" id="modalPetitDej"/> <label for="modalPetitDej"><div></div><span>PETIT DEJ</span></label>
                         
                     </li>
                     <li>
-                        <input type="radio" name="S1" value="DESSERT" id="DESSERT"/> <label for="DESSERT"><div></div><span>DESSERT</span> </label>
+                        <input type="radio" name="S1" value="DESSERT" id="modalDessert"/> <label for="modalDessert"><div></div><span>DESSERT</span> </label>
                         
                     </li>
                 </ul>
@@ -159,11 +160,11 @@
             <div class="flex">
                 <ul>
                     <li>
-                        <input type="radio" name="S2A" value="personnalisé " id="personnalisé "/> <label for="personnalisé "><div></div><span>personnalisé </span></label>
+                        <input type="radio" name="S2A" value="personnalisé" id="PersSalade"/> <label for="PersSalade"><div></div><span>personnalisé </span></label>
                     
                     </li>
                     <li>
-                        <input type="radio" name="S2A" value="Recommandé" id="Recommandé"/> <label for="Recommandé"><div></div><span>Recommandé</span></label>
+                        <input type="radio" name="S2A" value="Recommandé" id="RecSalade"/> <label for="RecSalade"><div></div><span>Recommandé</span></label>
                     
                     </li>
                 </ul>
@@ -254,8 +255,8 @@
         
     </div>
     <div class="btnss">
-        <input type="button" value="Envoyer" />
-        <input type="button" value="Ajouter un repas">
+        <input type="button" class="envoyer" value="Envoyer" />
+        <input type="button" class="more" value="Ajouter un repas">
     </div> 
     </div>  
     <!--modal dessert-->                        
@@ -292,8 +293,8 @@
             </ul>
     </div>
     <div class="btnss">
-        <input type="button" value="Envoyer" />
-        <input type="button" value="Ajouter un repas">
+        <input type="button" class="envoyer" value="Envoyer" />
+        <input type="button" class="more" value="Ajouter un repas">
     </div> 
     </div>
     <div class="PersSalade">
@@ -430,8 +431,8 @@
             
     </div>
     <div class="btnss">
-        <input type="button" value="Envoyer" />
-        <input type="button" value="Ajouter un repas"> 
+        <input type="button" class="envoyer" value="Envoyer" />
+        <input type="button" class="more" value="Ajouter un repas"> 
     </div>
     
     </div>
@@ -517,8 +518,8 @@
             </div>
         </div>
         <div class="btnss">
-            <input type="button" value="Envoyer" />
-            <input type="button" value="Ajouter un repas"> 
+            <input type="button" class="envoyer" value="Envoyer" />
+            <input type="button" class="more" value="Ajouter un repas"> 
         </div>
     </div>
 
@@ -584,5 +585,6 @@
         <li class="lastPag"><span></span><h6>Finaliser la commande</h6></li>
     </ul>
 </aside>
+<script src="js/Modal.js"></script>
 </body>
 </html>

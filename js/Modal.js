@@ -88,3 +88,18 @@ document.querySelectorAll('.more').forEach(a=>{
 })
 
 qq=document.querySelectorAll('input[type=checkbox],input[type=radio]')
+
+
+
+qqq=document.querySelectorAll('.PersSalade div ul li input')
+
+const color=function(e){
+    if (this.checked===true)
+    this.parentElement.style.border='8px solid green'
+    else
+        this.parentElement.style.border='8px solid white' 
+}
+
+qqq.forEach(af=>{
+    af.addEventListener('change',color)
+})

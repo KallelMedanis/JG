@@ -70,3 +70,208 @@
 .Tiramisu_spécalus:hover,#Tiramisu_spécalus_nutella:checked+label{
     background-image: url('../Modal_Img/tiramisuSpeculoos.jpeg');
 }
+.bkgSalade:hover{
+    background-image: url('../Modal_Img/salade.jpg');
+}
+.bkgPetitDéj:hover{
+    background-image: url('../Modal_Img/petitDéj.jpg');
+}
+.bkgDessert:hover{
+    background-image: url('../Modal_Img/dessert.jpg');
+}
+.bkgPers:hover{
+    background-image: url('../Modal_Img/saladePersonnalisé.jpeg');
+}
+.bkgRec:hover{
+    background-image: url('../Modal_Img/saladeRecommandé.jpg')
+}
+.Bases ul li:nth-child(1){
+    background-image: url('../Modal_Img/baseRiz.jpeg');
+}
+.Bases ul li:nth-child(2){
+    background-image: url('../Modal_Img/basePateCompléte.jpg');
+}
+.Bases ul li:nth-child(3){
+    background-image: url('../Modal_Img/baseBoulgour.jpg');
+}
+.Bases ul li:nth-child(4){
+    background-image: url('../Modal_Img/baseLaitue.png');
+}
+.Bases ul li:nth-child(5){
+    background-image: url('../Modal_Img/baseNouilleRiz.jpg');
+}
+.Bases ul li:nth-child(6){
+    background-image: url('../Modal_Img/baseVermicelles.jpg');
+}
+.Bases ul li:nth-child(7){
+    background-image: url('../Modal_Img/baseQuinoa.jpg');
+}
+
+
+.sup4 ul li:nth-child(1){
+    background-image: url('../Modal_Img/ingCrevAmande.jpg');
+}
+.sup4 ul li:nth-child(2){
+    background-image: url('../Modal_Img/ingCrevNat.png');
+}
+.sup4 ul li:nth-child(3){
+    background-image: url('../Modal_Img/ingCrevEpic.jpg');
+}
+.sup4 ul li:nth-child(4){
+    background-image: url('../Modal_Img/ingChamp.jpg');
+}
+.sup25 ul li:nth-child(1){
+    background-image: url('../Modal_Img/ingEscalopeHerbe.jpeg');
+}
+.sup25 ul li:nth-child(2){
+    background-image: url('../Modal_Img/ingEscalopeMielSésame.jpeg');
+}
+.sup25 ul li:nth-child(3){
+    background-image: url('../Modal_Img/ingEsxalopeEpicée.jpg');
+}
+.sup25 ul li:nth-child(4){
+    background-image: url('../Modal_Img/ingFromageParmesan.jpeg');
+}
+.sup25 ul li:nth-child(5){
+    background-image: url('../Modal_Img/ingStracciatella.jpg');
+}
+.sup25 ul li:nth-child(6){
+    background-image: url('../Modal_Img/ingAnanas.jpeg');
+}
+.sup25 ul li:nth-child(7){
+    background-image: url('../Modal_Img/ingThon.jpg');
+}
+.sup25 ul li:nth-child(8){
+    background-image: url('../Modal_Img/ingTomateSéché.jpg');
+}
+.sup25 ul li:nth-child(9){
+    background-image: url('../Modal_Img/ingNoix.jpg');
+}
+.egal15 ul li:nth-child(1){
+    background-image: url('../Modal_Img/ingJambon.jpg');
+}
+.egal15 ul li:nth-child(2){
+    background-image: url('../Modal_Img/baseRicotta.jpg');
+}
+.egal15 ul li:nth-child(3){
+    background-image: url('../Modal_Img/ingAubergine.jpg');
+}
+.egal15 ul li:nth-child(4){
+    background-image: url('../Modal_Img/ingHaricot-rouge.jpg');
+}
+.egal15 ul li:nth-child(5){
+    background-image: url('../Modal_Img/ingOignonCaramélisé.jpg');
+}
+.egal15 ul li:nth-child(6){
+    background-image: url('../Modal_Img/ingTomateCerise.jpg');
+}
+.egal15 ul li:nth-child(7){
+    background-image: url('../Modal_Img/ingMais.jpg');
+}
+.egal15 ul li:nth-child(8){
+    background-image: url('../Modal_Img/ingDatteKiwi.jpg');
+}
+.egal15 ul li:nth-child(9){
+    background-image: url('../Modal_Img/ingAbricotSec.jpg');
+}
+.egal15 ul li:nth-child(10){
+    background-image: url('../Modal_Img/ingNoisette.jpg');
+}
+.egal15 ul li:nth-child(11){
+    background-image: url('../Modal_Img/ingPommeDeTerreEpicé.jpg');
+}
+.egal15 ul li:nth-child(12){
+    background-image: url('../Modal_Img/ingSardines.jpg');
+}
+.egal1 ul li:nth-child(1){
+    background-image: url('../Modal_Img/ingBetterave.jpg');
+}
+
+.egal1 ul li:nth-child(2){
+    background-image: url('../Modal_Img/ingPimentConcombre.jpg');
+}
+
+.egal1 ul li:nth-child(3){
+    background-image: url('../Modal_Img/ingCarottePommeDeTerre.jpg');
+}
+
+.egal1 ul li:nth-child(4){
+    background-image: url('../Modal_Img/ingChou.jpg');
+}
+
+.egal1 ul li:nth-child(5){
+    background-image: url('../Modal_Img/ingLentilles.jpg');
+}
+
+.egal1 ul li:nth-child(6){
+    background-image: url('../Modal_Img/ingOeufPoché.jpg');
+}
+
+.egal1 ul li:nth-child(7){
+    background-image: url('../Modal_Img/ingAmandeEfiilé.jpg');
+}
+
+.egal08 ul li:nth-child(1){
+    background-image: url('../Modal_Img/ingOeuf.jpg');
+}
+
+.egal08 ul li:nth-child(2){
+    background-image: url('../Modal_Img/ingOlive.jpg');
+}
+
+.egal08 ul li:nth-child(3){
+    background-image: url('../Modal_Img/ingCacahuéte.jpg');
+}
+
+.egal05 ul li:nth-child(1){
+    background-image: url('../Modal_Img/ingZestaCitron.jpg');
+}
+
+.egal05 ul li:nth-child(2){
+    background-image: url('../Modal_Img/ingChia.jpg');
+}
+
+.egal05 ul li:nth-child(3){
+    background-image: url('../Modal_Img/ingGrainTournesol.jpg');
+}
+
+.egal05 ul li:nth-child(4){
+    background-image: url('../Modal_Img/ingSesame.jpg');
+}
+
+.Sauce ul li:nth-child(1){
+    background-image: url('../Modal_Img/sauceVinaigrette.jpeg');
+}
+
+.Sauce ul li:nth-child(2){
+    background-image: url('../Modal_Img/sauceMiel-et-moutarde.jpeg');
+}
+
+.Sauce ul li:nth-child(3){
+    background-image: url('../Modal_Img/sauceAsiatique.jpg');
+}
+
+.Sauce ul li:nth-child(4){
+    background-image: url('../Modal_Img/sauceMielBalsamique.jpg');
+}
+
+.Sauce ul li:nth-child(5){
+    background-image: url('../Modal_Img/sauceEpicée.jpeg');
+}
+
+.Sauce ul li:nth-child(6){
+    background-image: url('../Modal_Img/sauceGrecque.jpeg');
+}
+
+.Sauce ul li:nth-child(7){
+    background-image: url('../Modal_Img/sauceAgrumes.jpg');
+}
+
+.Sauce ul li:nth-child(8){
+    background-image: url('../Modal_Img/saucePesto.jpg');
+}
+
+.Sauce ul li:nth-child(9){
+    background-image: url('../Modal_Img/baseQuinoa.jpg');
+}
+

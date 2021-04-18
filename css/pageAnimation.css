@@ -40,7 +40,7 @@
 .matinal:hover,#MATINAL:checked + label{
     background-image: url('../Modal_Img/matinal.jpeg');
 }
-.flex ul li input:checked + label{
+.flex ul li input[type=checkbox]:checked + label{
     border: 5px solid green;
 }
 .modalPetitDej .flex ul li input:checked + label div span{

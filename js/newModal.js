@@ -56,6 +56,50 @@ const color=function(e){
         else
     this.parentElement.style.border='8px solid white'
 }
-document.querySelectorAll('.PersSalade div ul li input[type=checkbox]').forEach(a=>{
+document.querySelectorAll('.PersSalade .Ingrédints ul li input[type=checkbox],.PersSalade .Sauce ul li input[type=checkbox]').forEach(a=>{
     a.addEventListener('change',color)
+})
+//Cocher Base
+const toggleBase =function(e){
+    this.classList.toggle("checked")
+    if(this.classList.contains("checked"))
+    this.parentElement.style.border='8px solid green'
+    else
+    this.parentElement.style.border='8px solid white'
+}
+Array.from(document.querySelectorAll('.PersSalade .Bases ul li input[type=radio]'))
+.forEach(a=>{
+    a.addEventListener('click',toggleBase)
+})
+//Color SaladeRec
+const toggleSaladeRec =function(e){
+    this.classList.toggle("checked")
+    if(this.classList.contains("checked"))
+    this.style.border='5px solid green'
+    else
+    this.style.border='5px solid gold'
+}
+Array.from(document.querySelectorAll('.RecSalade .nosSaladeRec > div')).forEach(a=>{
+    a.addEventListener('click',toggleSaladeRec)
+})
+const togglePetitDej =function(e){
+    this.classList.toggle("checked")
+    if(this.classList.contains("checked"))
+    this.nextElementSibling  .style.border='5px solid green'
+    else
+    this.nextElementSibling  .style.border='5px solid gold'
+}
+Array.from(document.querySelectorAll('.modalPetitDej .flex ul li input[type=radio]')).forEach(a=>{
+    a.addEventListener('click',togglePetitDej)
+})
+Array.from(document.querySelectorAll('input[type=radio]')).forEach(a=>{
+    a.addEventListener('click',function(e){
+        e.preventDefault()
+    })
+})
+const prevent=function(e){
+    e.preventDefault()
+}
+Array.from(document.querySelector('.btnss').children).forEach(a=>{
+    a.addEventListener('click',prevent)
 })

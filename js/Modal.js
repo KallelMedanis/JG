@@ -1,4 +1,4 @@
-//ouverture modal
+/*//ouverture modal
 let modal=null
 const openModal = function(e){
     e.preventDefault()

@@ -38,6 +38,11 @@
     top: 10px;
     background-color: white;
 }
+.disFlex,.imgIng{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .modalWithBasket{
     overflow: auto;
     position: relative;
@@ -624,15 +629,41 @@ padding: 20px 0;
 .RecSalade{
     text-shadow: -1px -1px 0 gold, 1px -1px 0 gold, -1px 1px 0 gold, 1px 1px 0 gold;
 }
-
-
-.RecSalade,
-.lastModal,
-.modalSalade1,
-.modalPetitDej,
-.PersSalade,
-.modalDessert{
-    display: none;
+.close-button{
+    position: absolute;
+    font-size: 1.5em;
+    left: 10px;
+    top: 10px;
+    width: 30px;
+    color: chocolate;
+    background-color: transparent;
+    border:1px solid gray;
+    outline: none;
+}
+.modalLivraison{
+    width: 70%;
+    height: 90%;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.modalLivraison h3{
+    font-size: 2em;
+    padding: 5px 15px;
+}
+.modalLivraison .Modal{
+    position: relative;
+    top: 2%;
+    left: 97%;
+    transform: translateX(-100%);
+    padding: 15px 20px;
+}
+.localisationGPS{
+    padding: 15px 20px;
+    border-radius: 20px;
+    border:3px solid red;
+    outline: none;
 }
 .modalSalade1Pag,.RecSaladePag,.PersSaladePag,.modalPetitDejPag,.modalDessertPag,.lastModalPag{
     display: none;
@@ -714,5 +745,15 @@ padding: 20px 0;
 
 /*input[type='checkbox'],input[type='radio']{
     display: none;
-}*/
+}
 
+.RecSalade,
+.lastModal,
+.modalSalade1,
+.modalPetitDej,
+.PersSalade,
+.modalDessert{
+    display: none;
+}
+
+*/

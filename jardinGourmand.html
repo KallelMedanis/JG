@@ -17,8 +17,8 @@
     <div class="headerLeft">
        <nav>
            <li><a href="jardinGourmand.html">HOME</a> </li>
-           <li>MENU</li>
-           <li>CONTACT</li>
+           <li class="Modal" id="modalCommande_modalMENUHidden">MENU</li>
+           <li class="contactTag">CONTACT</li>
            </nav>
     </div>
     <p><img class="logo" src="img/Logo.png" alt="Logo_jG"/></p>
@@ -26,7 +26,7 @@
         <nav>
             <li><a href="https://www.facebook.com/Le-jardin-gourmand-101896735011854/">FACEBOOK</a> </li>
             <li><a href="https://www.instagram.com/">INSTAGRAM</li>
-            <li><a href="#">LOCALISATION</a></li>
+            <li class="Modal" id="modalCommande_modalLOCHidden">LOCALISATION</li>
         </nav> 
      </div>
 </header>
@@ -43,7 +43,9 @@
     <p class="gout">Vous avez a disposition largement de quoi concocter vos délicieuses repas salade,riches en gout
         <br>et en couleurs ! </p></div>
     <div><p class="Nutriments">Profitez de nos délicieux bols pleins de nutriments et de vitamines</p></div>
-    <button class="commande Modal" id="modalCommande" type="button">Passer une commande</button>
+
+    <button class="commande Modal" id="modalCommande_modalWithBasket_modalGeneral">Passer une commande</button>
+    
     <h2>On dispose de service <span><a href="#Livraison">livraison</a></span></h2>
 </div>
 <div class="baseAndSauce">
@@ -63,8 +65,8 @@
 <div class="plaisirManger">
     <h5>Bien manger,<br>un plaisir a partager</h5>
     <div class="btns">
-        <button class="sldPers" type="button">SALADE PERSONNALISEE</button>
-        <button class="sldRec" type="button">SALADE RECOMMANDEE</button>
+        <button class="sldPers Modal" id="modalCommande_modalWithBasket_PersSalade" type="button">SALADE PERSONNALISEE</button>
+        <button class="sldRec Modal" id="modalCommande_modalWithBasket_RecSalade">SALADE RECOMMANDEE</button>
     </div>
 </div>
 <div class="blocs">
@@ -73,7 +75,7 @@
         <h3>Les ingrédients</h3>
         <h4>NOTRE SPECIALITE</h4>
         <p>Click ci-dessous pour découvrir plus de détails</p>
-        <button class="btnBlov" type="button">Nos ingrédients</button>
+        <button class="btnBlov Modal" id="modalCommande_imgIng" type="button">Nos ingrédients</button>
     </div>
     <div><img src="img/salade.jpg"></div>
 </div>
@@ -83,7 +85,7 @@
         <h3>Les amateurs de gastronomie</h3>
         <h4>L'EXCEPTION</h4>
         <p>On vous offre une large gamme des plats gastronomiques pour faire satisfaire tous nos clients</p>
-        <button class="btnBlov" type="button">Choisissez</button>
+        <button class="btnBlov Modal" id="modalCommande_imgSoupe" type="button">Choisissez</button>
     </div>
     
 </div>
@@ -92,41 +94,25 @@
         <h3>Délicieux desserts</h3>
         <h4>GOURMANDISES</h4>
         <p>Ne vous inquiétez pas, GOURMANIDSE mais a rapport qualité prix beaucoup plus mieux</p>
-        <button class="btnBlov" type="button">Découvrez</button>
+        <button class="btnBlov Modal" id="modalCommande_modalWithBasket_modalDessert" type="button">Découvrez</button>
     </div>
     <div><img src="img/dessert.png"></div>
 </div>
 </div>
 <div class="Livraison" id="Livraison">
     <h6>Débordé</h6>
-    <button class="livraison">Espace livraison</button>
+    <button class="livraison Modal" id="modalCommande_modalLivraison">Espace livraison</button>
 </div>
 <footer>
-    <nav>
-        <ul>
-            <li><a href="#">HOME</a></li>
-            <li>MENU</li>
-            <li>CONTACT</li>
-        </ul>
-    </nav>
+<hr>
     <p><img src="img/Logo.png"/></p>
 </footer>
-<!--modal de nav-->
-<aside class="modalMENU" aria-hidden="true" role="dialog">
-    <div><img src="img/meny.jpg" alt="MENU"></div>
-</aside>
-<aside class="modalLOC" aria-hidden="true" role="dialog">
-    <div><img src="img/loc.png" alt="MENU"></div>
-</aside>
-
-
-
 
 <!--modal des commandes-->
 <!--modal principal-->
 <aside class="modalCommande" aria-hidden="true" role="dialog" aria-modal="false" style="display: none;">   
-    <div class="modalWithBasket js-modal-stop">
-        <button class="close-button">fdgxfX</button>
+    <div class="modalWithBasket">
+        <button class="close-button">X</button>
         <p class="commandeWord">Commande <img class="panier" src="img/shopping-basket-solid.svg"><span class="nbrCmd">0</span></p>
         <div class="CommandePanier">
             <h5>Votre commande</h5>
@@ -139,15 +125,15 @@
             <div class="flex">
                 <ul>
                     <li>
-                        <input type="radio" name="S1"  value="SALADE" id="modalSalade1"/> <label for="modalSalade1" class="bkgSalade"><div></div><span>SALADE</span></label>
+                        <input type="radio" name="S1" class="Modal" value="SALADE" id="modalCommande_modalWithBasket_modalSalade1"/> <label for="modalCommande_modalWithBasket_modalSalade1" class="bkgSalade"><div></div><span>SALADE</span></label>
                         
                     </li>
                     <li>
-                        <input type="radio" name="S1" value="PETIT DEJ" id="modalPetitDej"/> <label for="modalPetitDej" class="bkgPetitDéj"><div></div><span>PETIT DEJ</span></label>
+                        <input type="radio" name="S1" class="Modal" value="PETIT DEJ" id="modalCommande_modalWithBasket_modalPetitDej"/> <label for="modalCommande_modalWithBasket_modalPetitDej" class="bkgPetitDéj"><div></div><span>PETIT DEJ</span></label>
                         
                     </li>
                     <li>
-                        <input type="radio" name="S1" value="DESSERT" id="modalDessert"/> <label for="modalDessert" class="bkgDessert"><div></div><span>DESSERT</span> </label>
+                        <input type="radio" name="S1" class="Modal" value="DESSERT" id="modalCommande_modalWithBasket_modalDessert"/> <label for="modalCommande_modalWithBasket_modalDessert" class="bkgDessert"><div></div><span>DESSERT</span> </label>
                         
                     </li>
                 </ul>
@@ -160,11 +146,11 @@
             <div class="flex">
                 <ul>
                     <li>
-                        <input type="radio" name="S2A" value="personnalisé" id="PersSalade"/> <label for="PersSalade" class="bkgPers"><div></div><span>personnalisé </span></label>
+                        <input type="radio" class=".Modal" name="S2A" value="personnalisé" id="modalCommande_modalWithBasket_PersSalade"/> <label for="modalCommande_modalWithBasket_PersSalade" class="bkgPers"><div></div><span>personnalisé </span></label>
                     
                     </li>
                     <li>
-                        <input type="radio" name="S2A" value="Recommandé" id="RecSalade"/> <label for="RecSalade" class="bkgRec"><div></div><span>Recommandé</span></label>
+                        <input type="radio" class=".Modal" name="S2A" value="Recommandé" id="modalCommande_modalWithBasket_RecSalade"/> <label for="modalCommande_modalWithBasket_RecSalade" class="bkgRec"><div></div><span>Recommandé</span></label>
                     
                     </li>
                 </ul>
@@ -255,8 +241,8 @@
         
     </div>
     <div class="btnss">
-        <input type="button" class="envoyer" value="Envoyer" />
-        <input type="button" class="more" value="Ajouter un repas">
+        <input type="button" class="envoyer Modal" id="modalCommande_modalWithBasket_lastModal" value="Envoyer" />
+        <input type="button" class="more Modal" id="modalCommande_modalWithBasket_modalGeneral" value="Ajouter un repas">
     </div> 
     </div>  
     <!--modal dessert-->                        
@@ -293,8 +279,8 @@
             </ul>
     </div>
     <div class="btnss">
-        <input type="button" class="envoyer" value="Envoyer" />
-        <input type="button" class="more" value="Ajouter un repas">
+        <input type="button" class="envoyer Modal" id="modalCommande_modalWithBasket_lastModal" value="Envoyer" />
+        <input type="button" class="more Modal" id="modalCommande_modalWithBasket_modalGeneral" value="Ajouter un repas">
     </div> 
     </div>
     <!--Salade personnalisée-->
@@ -432,8 +418,8 @@
             
     </div>
     <div class="btnss">
-        <input type="button" class="envoyer" value="Envoyer" />
-        <input type="button" class="more" value="Ajouter un repas"> 
+        <input type="button" class="envoyer Modal" id="modalCommande_modalWithBasket_lastModal" value="Envoyer" />
+        <input type="button" class="more Modal" id="modalCommande_modalWithBasket_modalGeneral" value="Ajouter un repas"> 
     </div>
     
     </div>
@@ -519,8 +505,8 @@
             </div>
         </div>
         <div class="btnss">
-            <input type="button" class="envoyer" value="Envoyer" />
-            <input type="button" class="more" value="Ajouter un repas"> 
+            <input type="button" class="envoyer Modal" id="modalCommande_modalWithBasket_lastModal" value="Envoyer" />
+            <input type="button" class="more Modal" id="modalCommande_modalWithBasket_modalGeneral" value="Ajouter un repas"> 
         </div>
     </div>
 
@@ -568,6 +554,21 @@
 
     </div>
 </div>
+
+</div>
+<div class="imgSoupe">
+    <p><img src="Modal_Img/soupe.jpg"></p>
+</div>
+<div class="imgIng">
+    <p><img src="img/meny.jpg"></p>
+</div>
+<div class="modalLivraison">
+    <h2>Espace livraison</h2>
+    <h3>Si la commande sera livré dans votre localisation actuell;<br>On peut vous faciliter la localisation en tapant sur <button class="localisationGPS">Localiser</button> </h3>
+    <div class="APILocalisation"></div>
+    <button class="Modal" id="modalCommande_modalWithBasket_modalGeneral">Commander</button>
+</div>
+<!--Pagination-->
 <div class="Pagination">
     <ul>
         <li class="modalGeneralPag"><span></span><h6>Accueil</h6></li>
@@ -585,9 +586,11 @@
         <li class="lastModalPag"><span></span><h6>Finaliser la commande</h6></li>
     </ul>
 </div>
-</div>
+<!--modal de nav-->
+<div class="disFlex"><img src="img/meny.jpg" class="modalMENUHidden" alt="MENU"></div>
+<div class="disFlex"><img src="img/loc.png" class="modalLOCHidden" alt="MENU"></div>
 
 </aside>
-<script src="js/Modal.js"></script>
+<script src="js/newModal.js"></script>
 </body>
 </html>

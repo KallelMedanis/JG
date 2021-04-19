@@ -11,6 +11,58 @@ for (let k = 0; k < classTab.length; k++) {
 return nbr
 
 }
+//pagModal
+let allPag=['modalGeneralPag','modalSalade1Pag','RecSaladePag','PersSaladePag','modalPetitDejPag','modalDessertPag','lastModalPag']
+let tabPag=[]
+const rampArray=function(e){
+    console.log(this.id.substr(this.id.indexOf('et_')+3,this.length))
+    tabPag.push(this.id.substr(this.id.indexOf('et_')+3,this.length)+'Pag')
+    console.log(tabPag)
+    pagModal(tabPag)
+}
+const pagModal=function(e){
+    e.forEach(a=>{
+        console.log(a)
+        if(document.getElementsByClassName(a).length==2){
+            document.getElementsByClassName(a)[0].style.display='block'
+            document.getElementsByClassName(a)[1].style.display='block'
+            console.log(document.getElementsByClassName(a)[0])  
+            console.log(document.getElementsByClassName(a)[1])  
+        }
+            else if (document.getElementsByClassName(a).length==1){
+            document.getElementsByClassName(a)[0].style.display=''
+            console.log(document.getElementsByClassName(a)[0])    
+        }
+})
+    /*allPag.forEach(j=>{
+        Array.from(e).forEach(a=>{
+            if(a==j){
+            console.log(a)
+            if(document.getElementsByClassName(a).length==2){
+            document.getElementsByClassName(a)[0].style.display=''
+            document.getElementsByClassName(a)[1].style.display=''
+        }
+            else if (document.getElementsByClassName(a).length==1){
+            console.log(document.getElementsByClassName(a))
+            document.getElementsByClassName(a)[0].style.display=''
+            console.log(document.getElementsByClassName(a)[0])
+        }
+        }
+        else{
+            document.getElementsByClassName(a)[0].style.display='none'
+            
+        }
+        })
+    })*/
+    
+}
+//more Click
+Array.from(document.querySelectorAll('.more')).forEach(a=>{
+    a.addEventListener('click',(function(e){
+        tabPag=[]
+        pagModal(tabPag)
+    }))
+})
 //ToggleItRec function
 const toggleItRec=function(a){
     nbr=0
@@ -68,6 +120,7 @@ document.querySelector('.close-button').removeEventListener("click",closeModal)
 }
 document.querySelectorAll('.Modal').forEach(a=>{
     a.addEventListener('click',openModal)
+    a.addEventListener('click',rampArray)
 })
 
 //Contact
@@ -181,12 +234,8 @@ const prevent=function(e){
 Array.from(document.querySelector('.btnss').children).forEach(a=>{
     a.addEventListener('click',prevent)
 })
-//Pagination
-let tabPag=['modalGeneralPag']
-    document.querySelector('input').addEventListener('click',function(e){
-        Array.from(document.querySelectorAll('.modalSalade1,.modalPetitDej,.modalDessert,.PersSalade,.RecSalade,.lastModal')).forEach(a=>{
-        if(document.querySelector('.modalCommande').style.display=="" && a.style.display=="")
-        tabPag.push(a.className+'Pag')
-    })
-})
+
 //Try
+document.querySelector('.Pagination').addEventListener('click',function(e){
+    e.stopPropagation()
+})

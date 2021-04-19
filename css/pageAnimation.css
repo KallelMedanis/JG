@@ -49,25 +49,25 @@
 .modalPetitDej .flex ul li input:checked + label div small{
     border-top: 1px solid green;
 }
-.Tarte_au_citron:hover,#Tarte_au_citron:checked + label{
+.Tarte_au_citron:hover,#Tarte_au_citron:checked + label,#Tarte_au_citronn:checked+label{
     background-image: url("../Modal_Img/tarteCitron.jpeg");
 }
-.Tiramisu_café:hover,#Tiramisu_café:checked +label{
+.Tiramisu_café:hover,#Tiramisu_café:checked +label,#Tiramisuu_café:checked+label{
     background-image: url('../Modal_Img/tiramisuCafé.jpeg');
 }
-.Fondant_pistache:hover,#Fondant_pistache:checked +label{
+.Fondant_pistache:hover,#Fondant_pistache:checked +label,#Tiramisu_spécalus-nutella:checked+label{
     background-image: url('../Modal_Img/pistache.jpeg');
 }
-.Fondant_Chocolat:hover,#Fondant_Chocolat:checked +label{
+.Fondant_Chocolat:hover,#Fondant_Chocolat:checked +label,#Red_velvett:checked+label{
     background-image: url('../Modal_Img/-fondantChocolat.jpeg');
 }
-.Cheesecake_caramel:hover,#Cheesecake_caramel:checked+label{
+.Cheesecake_caramel:hover,#Cheesecake_caramel:checked+label,#Cheesecake_caramell:checked+label{
     background-image: url('../Modal_Img/cheesecakeCaramel.jpg');
 }
-.Red_velvet:hover,#Red_velvet:checked+label{
+.Red_velvet:hover,#Red_velvet:checked+label,#Fondant_Chocolatt:checked+label{
     background-image: url('../Modal_Img/redVelvet.jpg');
 }
-.Tiramisu_spécalus:hover,#Tiramisu_spécalus_nutella:checked+label{
+.Tiramisu_spécalus:hover,#Tiramisu_spécalus_nutella:checked+label,#Fondant_pistachee:checked+label{
     background-image: url('../Modal_Img/tiramisuSpeculoos.jpeg');
 }
 .bkgSalade:hover{

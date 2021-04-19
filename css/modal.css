@@ -665,7 +665,6 @@ padding: 20px 0;
     outline: none;
 }
 .modalSalade1Pag,.RecSaladePag,.PersSaladePag,.modalPetitDejPag,.modalDessertPag,.lastModalPag{
-    display: none;
 }
 .Pagination{
     position: absolute;

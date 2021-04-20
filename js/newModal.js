@@ -94,10 +94,11 @@ for (let k = 0; k < classTab.length; k++) {
 return nbr
 
 }
+let newTab
 //Begining
 const allModal=document.querySelectorAll('.modalLivraison,.modalMENUHidden,.modalLOCHidden,.imgSoupe,.imgIng,.RecSalade,.lastModal,.modalSalade1,.modalPetitDej,.PersSalade,.modalDessert,.modalWithBasket,.modalGeneral,.modalCommande')
 const openModal=function(e){
-    let newTab=[]
+newTab=[]
     const targetId=e.target.getAttribute("id")
     console.log(targetId)
     const targetTab= targetId.toString().split('_');
@@ -273,14 +274,15 @@ document.querySelector('.Pagination').addEventListener('click',function(e){
 })
 //Pagination function
 const openModalId=function(e){
+    let tabPagFalsee=[]
+    newTab=[]
     console.log(e)
     const idModal=Array.from(document.querySelectorAll('.Modal')).map(aa=>aa.id)
     console.log(idModal)
     idModal.forEach(a=>{
         if(a.indexOf(e)==a.length-e.length){
             
-        }
-       /* const targetTab= targetId.toString().split('_');
+    const targetTab= a.toString().split('_');
     console.log(targetTab)
     targetTab.forEach(a=>{
         document.getElementsByClassName(a)[0].addEventListener('click',stopPropagation)
@@ -288,6 +290,7 @@ const openModalId=function(e){
 
     })
     const allModalClassName=Array.from(allModal).map(x=>x.className)
+    newTab=[]
     for (let i = 0; i < allModalClassName.length; i++) {
         if(targetTab.indexOf(allModalClassName[i])==-1)
         newTab.push(allModalClassName[i])
@@ -296,31 +299,40 @@ const openModalId=function(e){
     newTab.forEach(a=>{
         document.getElementsByClassName(a)[0].style.display='none'
     })
-    document.querySelector('.modalCommande').addEventListener('click',closeModal)
-    document.querySelector('.close-button').addEventListener('click',closeModal)
-}
-    
-const stopPropagation= function(e){
-    e.stopPropagation()
-}
-const closeModal = function(e){
-    e.preventDefault()
-    Array.from(allModal).forEach(a=>{
-        a.style.display=''
-    })
-    document.querySelector('.modalCommande').style.display='none'
-    document.querySelector('.modalCommande').setAttribute('aria-hidden',true)
-    document.querySelector('.modalCommande').setAttribute('aria-modal',false)
-    document.querySelector('.modalCommande').removeEventListener('click',closeModal)
-document.querySelector('.close-button').removeEventListener("click",closeModal)
-}
-        }*/
         
-    })
+    }
+})
+let ina
+ina=tabPag.indexOf(e+'Pag')
+console.log(ina)
+for (let k = 0; k < tabPag.length-ina-1; k++) {
+    tabPag.pop()
 }
+console.log(tabPag)
+allPag.forEach(a=>{
+    if(tabPag.includes(a))
+    return
+    else
+    tabPagFalsee.push(a)
+})
+pagModalFalse(tabPagFalsee)
+}
+/*const supprimerPag=function(e){
+    let j=0
+    let tab=[]
+for (let i = 0; i < tabPag.length-1; i++) {
+    if(tabPag[i]==e.className){
+        tab[j]=tabPag[i+1]
+        j++
+    }
+    console.log(tab)
+    pagModalFalse(tab)
+}
+}*/
 Array.from(document.querySelectorAll('.Pagination ul li')).forEach(a=>{
     a.addEventListener('click',function(){
     openModalId(a.className.substr(0,a.className.length-3))
+    //supprimerPag(this)
         index=tabPag.indexOf(this.className)
         console.log(index)
         it=tabPag.length-index-1

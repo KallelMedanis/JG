@@ -564,8 +564,15 @@
 </div>
 <div class="modalLivraison">
     <h2>Espace livraison</h2>
-    <h3>Si la commande sera livré dans votre localisation actuell;<br>On peut vous faciliter la localisation en tapant sur <button class="localisationGPS">Localiser</button> </h3>
-    <div class="APILocalisation"></div>
+    <div class="locFlex">
+    <h3 class="nousLocal">Si la commande sera livré dans votre localisation actuell;<br>On peut vous faciliter la localisation en tapant sur <br><button class="localisationGPS">Localiser</button> </h3>
+    <div class="APILocalisation">
+        <h3>Si vous voulez préciser par vous méme,<br>Veillez entre votre localisation</h3>
+        <input type="text" class="localRouteBtn" value="Sfax Route:">
+        <input type="text" class="localKlmBtn" value="Klm: ">
+        <input type="text" class="localAproxBtn" value="A proximité de: ">
+    </div>
+</div>
     <button class="Modal" id="modalCommande_modalWithBasket_modalGeneral">Commander</button>
 </div>
 <!--Pagination-->

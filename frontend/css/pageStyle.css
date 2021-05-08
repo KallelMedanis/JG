@@ -273,9 +273,7 @@ button{
 .locFlex{
     display: flex;
     width: 100%;
-    margin: 30px 0 30px 0;
     padding: 0 50px;
-    line-height: 2.8em;
 }
 .APILocalisation{
     width: 49%;
@@ -287,5 +285,21 @@ button{
 .APILocalisation input{
     width: 100%;
     padding:10px;
-    margin: 10px;
+    margin: 0 10px;
+    border:1px solid red;
+}
+.modalLivraison small{
+    color: orange;
+    margin: 0;
+    margin-left: 10px;
+}
+.modalLivraison h3{
+line-height: 1.5em;
+}
+.valueLocation{
+    background-color: paleturquoise;
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+    padding: 20px;
 }

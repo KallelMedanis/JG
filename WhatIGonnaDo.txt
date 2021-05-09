@@ -1,0 +1,8 @@
+0/Finish pattern of location
+1/Location GPS
+2/Régulation de h4
+3/Verify Commander
+4/Utiliser map -> Décrivez votre local
+
+5/Verify Envoyer et Ajouter un repas
+6/clean input in every click

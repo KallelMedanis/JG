@@ -303,3 +303,8 @@ line-height: 1.5em;
     left: 20px;
     padding: 20px;
 }
+.nousLocal p{
+    color: black;
+    font-size: 0.5em;
+    text-align: center;
+}

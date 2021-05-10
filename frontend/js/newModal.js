@@ -136,8 +136,32 @@ const closeModal = function(e){
 document.querySelector('.close-button').removeEventListener("click",closeModal)
 }
 document.querySelectorAll('.Modal').forEach(a=>{
-    a.addEventListener('click',openModal)
-    a.addEventListener('click',function(){
+    a.addEventListener('click',e=>{
+        if(e.target.value==='Ajouter un repas' && e.target.style.color!='gold'){
+
+        }
+        else if (e.target.value==='Envoyer' && e.target.style.color!='gold'){
+
+        }
+        else if(e.target.innerHTML==='Commander' && e.target.style.border!='2px solid gold'){
+
+        }
+        else{
+            openModal(e)
+        }
+
+    })
+    a.addEventListener('click',function(e){
+        if(e.target.value==='Ajouter un repas' && e.target.style.color!='gold'){
+
+        }
+        else if (e.target.value==='Envoyer' && e.target.style.color!='gold'){
+
+        }
+        else if(e.target.innerHTML==='Commander' && e.target.style.border!='2px solid gold'){
+
+        }
+        else{
         if(this.classList.contains("more")){
             console.log(a)
             tabPag=['modalGeneralPag']
@@ -148,6 +172,7 @@ document.querySelectorAll('.Modal').forEach(a=>{
         else{
         console.log(a)
         rampArray(this)
+        }
         }
     })
    

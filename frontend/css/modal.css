@@ -343,6 +343,7 @@
     margin: 10px 20px;
     padding: 20px;
     border-radius: 30px;
+    cursor: pointer;
 }
 .domicile{
     display: inline-block;
@@ -350,12 +351,13 @@
     margin: 10px 20px;
     padding: 20px;
     border-radius: 30px;
+    cursor: pointer;
     
 }
 .insideProc label{
     font-size: 1.3em;
 }
-#tel,#dateAndHour{
+#tel,#dateAndHour,#name_prenom{
     height: 30px;
     font-size: 20px;
 }

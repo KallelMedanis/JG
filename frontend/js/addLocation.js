@@ -91,22 +91,3 @@ locationInput.forEach(a=>{
 
 
 
-const allButtons=Array.from(document.querySelectorAll('input.Modal[type=button]'))
-allButtons.forEach(a=>{
-    toSwitch=a.parentElement.parentElement.className
-    console.log(toSwitch)
-    switch (toSwitch){
-        case 'modalPetitDej':
-        
-        break;
-        case 'modalDessert':
-        
-        break;
-        case 'PersSalade':
-
-        break;
-        case'RecSalade':
-
-        break;
-    }
-})

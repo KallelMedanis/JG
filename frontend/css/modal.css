@@ -763,5 +763,24 @@ display: none;
 }
 
 */
-.Pagination{
+.livreur p{
+font-size: 1em;
+text-align: center;
+padding:0 0 20px 0;
+}
+.livreur .localisationGPS{
+    font-size: 1.2em;
+}
+.CompagnieDeLivraison ul{
+    height: 95px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.CompagnieDeLivraison ul li{
+    list-style-type: none;
+    cursor: pointer;
+}
+.CompagnieDeLivraison ul li img{
+width: 130px;
 }

@@ -5,7 +5,7 @@ let locationBoolean
 let positionInData
 const localiser=document.querySelector('.localisationGPS')
 const locationInput=document.querySelectorAll('.APILocalisation input')
-const commanderBtn=document.querySelector('.modalLivraison button')
+const commanderBtn=document.querySelectorAll('.localisationGPS')
 const commanderLocation=document.querySelector('.modalLivraison .Modal')
 const verify=e=>{
     locationBoolean=false
@@ -48,13 +48,16 @@ const verify=e=>{
 }
 //
 const ShowInLocation=(lat,lng)=>{
+    commanderBtn.forEach(a=>{
+        a.nextElementSibling.nextElementSibling.innerHTML='Vous etes localisé<br>On va vous livrer a ladresse détécté de votre GPS<br>'
+                })
     document.querySelector('.valueLocation').innerHTML=`<h6 class='FermerWase'>X</h6><iframe src="https://embed.waze.com/iframe?zoom=15&lat=${lat}&lon=${lng}"
     width="300" height="400"></iframe>`
     document.querySelector('.valueLocation').style.padding='0'
     document.querySelector('.FermerWase').addEventListener('click',e=>{
         document.querySelector('.valueLocation').innerHTML=''
         document.querySelector('.valueLocation').style.padding='10px'
-        commanderBtn.nextElementSibling.nextElementSibling.innerHTML='Vous etes localisé<br>On va vous livrer a ladresse du map'
+        
     })
     locationBoolean=true
     commanderLocation.style.border='2px solid gold'
@@ -84,10 +87,9 @@ const getPosition=e=>{
 
 
 
-commanderBtn.addEventListener('click',getPosition)
+Array.from(commanderBtn).forEach(b=>{
+b.addEventListener('click',getPosition)
 locationInput.forEach(a=>{
     a.addEventListener('input',verify)
 })
-
-
-
+})

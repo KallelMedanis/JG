@@ -30,3 +30,7 @@ text-align: left;
 .contactTag:hover .contact{
     display: block;
 }
+.totalPrice{
+    display: flex;
+    justify-content: space-around;
+}

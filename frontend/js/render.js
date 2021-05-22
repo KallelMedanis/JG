@@ -17,7 +17,8 @@ export const render={
                 <li class="tikTak"><img src="img/tiktak.PNG"></li>
                 <li class="Deliveroo"><img src="img/Deliveroo.png"></li>
             </ul>
-        </div>`
+        </div>
+        <div class="ajouterGPSorPersonnelData"></div>`
     },
     useGPS:()=>{
         return `<button class="localisationGPS">Localiser</button><br><p></p>`

@@ -115,7 +115,30 @@
         <p class="commandeWord">Commande <img class="panier" src="img/shopping-basket-solid.svg"><span class="nbrCmd">0</span></p>
         <div class="CommandePanier">
             <h5>Votre commande</h5>
-            <h4>vous n'avez rien commandé encore</h4>
+            <div class="toAddInCouses">
+                <table>
+                    <tr>
+                    <th>Produit a acheter</th>
+                    <th>Prix</th>
+                    <th>Annuler l'achat</th>
+                    </tr>
+                    <tr class="petitDéjPanier">
+                        <td colspan="3" class="bigSizeTable" style="display:none;">PetitDéjener</td>
+                    </tr>
+                    <tr class="PersonnaliséPanier">
+                            <td colspan="3" class="bigSizeTable" style="display:none;">Salade Personnalisé</td>
+                    </tr>
+                    <tr class="ReconnmanderPanier">
+                            <td colspan="3" class="bigSizeTable" style="display:none;">Salade Recommandé</td>
+                    </tr>
+                    <tr class="DessertPanier">
+                            <td colspan="3" class="bigSizeTable" style="display:none;">Dessert</td>
+                    </tr>
+                    
+             </table>
+            </div>
+            <h4 class="hideIfEmpty">vous n'avez rien commandé encore</h4>
+            <h4 class="totalPrice"><span>Total a payer:</span><em id="priceGonnaChange">0 DT</em></h4>
         </div>
 <!--modal_Premiére-->
         <div class="modalGeneral">
@@ -224,7 +247,7 @@
                     <input type="checkbox" name="Cake" id="Cake"/> <label for="Cake" class="Cake"><div></div><span>Cake</span><BR><small>3DT</small></label>
                 </li>
                 <li>
-                    <input type="checkbox" name="Oeuf brouillé" id="Oeuf_brouillé"/> <label for="Oeuf_brouillé" class="Oeuf_brouillé"><div></div><span>Oeuf<br>brouillé</span><small class="oeufBrouilleSmall">5DT</small></label>
+                    <input type="checkbox" name="Oeuf brouillé" id="OeufBrouillé"/> <label for="OeufBrouillé" class="OeufBrouillé"><div></div><span>Oeuf<br>brouillé</span><small class="oeufBrouilleSmall">5DT</small></label>
                 </li>
                 <li>
                     <input type="checkbox" name="Granola" id="Granola"/> <label for="Granola" class="Granola"><div></div><span>Granola </span><small>6DT</small></label>
@@ -516,7 +539,22 @@
         <div class="ticket">
             <h3>Votre ticket</h3>
             <hr>
-            <div class="insideTicket"></div>
+            <div class="insideTicket">
+                <div class="Petit_Déj">
+                    <h2>Petit Déjeuner</h2>
+                </div>
+                <div class="Personnalisée_ticket">
+                    <h2>Salade Personnalisée</h2>
+                </div>
+                <div class="Recommandée_ticket">
+                    <h2>Salade Recommandée</h2>
+                </div>
+                <div class="Dessert_ticket">
+                    <h2>Dessert</h2>
+                </div>
+                <h4 id="priceTicket"><span> </span><em></em></h4>
+                <h4 class="goodMeal">Bonne appétit</h4>
+            </div>
         </div>
         <div class="proc">
             <h3>Mode de livraison</h3>
@@ -590,6 +628,7 @@
 <script src="js/addLocation.js"></script>
 <script src="js/verification.js"></script>
 <script src="js/paginationValidation.js"></script>
+<script type="module" src="js/locationData.js"></script>
 <script type="module" src="js/Panier.js"></script>
 </body>
 </html>

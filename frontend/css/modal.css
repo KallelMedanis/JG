@@ -383,15 +383,17 @@
     font-size: 1.2em;
 }
 .cmd{
+    margin-top: 15px;
     position: relative;
     left: 67%;
     padding: 12px;
     width: 200px;
-    border:2px solid green;
-    color: green;
+    border:2px solid grey;
+    color: grey;
     font-weight: bold;
     text-transform: uppercase;
     background-color: white;
+    cursor: pointer;
 }
 /*Salade personnalisée*/
 .PersSalade .btnss{
@@ -706,7 +708,7 @@ display: none;
     transform: translateX(-50%);
     width: 50px;
     height: 50px;
-    background-color: red;
+    background-color: yellow;
     border-radius: 50%;
     z-index: 5;
 }
@@ -730,10 +732,29 @@ display: none;
     border: 2px solid gold;
     display: none;
 }
-.commandeWord:hover + .CommandePanier{
-    display: block;
+/*Pagination background*/
+.modalGeneralPag span{
+background-image: url('../imgPag/Accueil.png');
 }
-
+.modalSalade1Pag span{
+    background-image: url('../imgPag/VotreSalade.jpg');
+}
+.RecSaladePag span{
+    background-image: url('../imgPag/Nos Salades.jpg');
+}
+.PersSaladePag span{
+    background-image: url('../imgPag/Personnaliser.jpg');
+}
+.modalPetitDejPag span{
+    background-image: url('../imgPag/petitDej.jpg');
+}
+.modalDessertPag span{
+    background-image: url('../imgPag/Dessert.jpg');
+}
+.lastModalPag span{
+    background-image: url('../imgPag/Finaliser.jpg');
+}
+/*Pagination background*/
 .CommandePanier h5{
     text-align: center;
     color: gold;
@@ -742,7 +763,7 @@ display: none;
     padding:7px 0;
     border-bottom: 2px solid gold;
 }
-.CommandePanier h4{
+.CommandePanier h4,.ticket h4{
     border: 2px solid chocolate;
     text-align: center;
     margin:10px;
@@ -783,4 +804,20 @@ padding:0 0 20px 0;
 }
 .CompagnieDeLivraison ul li img{
 width: 130px;
+}
+.insideTicket div h2{
+    font-size: 1.4em;
+    font-weight: normal;
+}
+.insideTicket div div{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+.insideTicket div h6{
+    font-weight: normal;
+    font-size: 1.05em;
+}
+.insideTicket div h5{
+    font-weight: normal;
 }

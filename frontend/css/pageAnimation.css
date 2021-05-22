@@ -16,7 +16,7 @@
 .Cake:hover,#Cake:checked + label{
     background-image: url('../Modal_Img/cake.jpeg');
 }
-.Oeuf_brouillé:hover,#Oeuf_brouillé:checked + label{
+.Oeuf_brouillé:hover,#OeufBrouillé:checked + label{
     background-image: url('../Modal_Img/oeuf.jpeg');
 }
 .Granola:hover,#Granola:checked + label{
@@ -275,3 +275,27 @@
     background-image: url('../Modal_Img/baseQuinoa.jpg');
 }
 
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(200, 200, 200);
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: 0.7rem;
+    width: 100%;
+}
+th{
+    padding: 9px;
+    background-color: gold;
+    font-size: 1.3em;
+    color: white;
+}
+td{
+    border: 1px solid rgb(190, 190, 190);
+    padding: 9px;
+}
+.bigSizeTable{
+    color: green;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid green;
+}

@@ -41,16 +41,18 @@ document.querySelector('.vous_localiser').addEventListener('click',e=>{
     e.target.classList.add('checked')
     e.target.style.backgroundColor='red'
     ajouterGPSorPersonnelData.innerHTML=render.useGPS()
-    let routeDonnée
+
+let routeDonnée
 let klmDonnée
 let aproxDonnée
 let locationBoolean
 let positionInData
 const localiser=document.querySelector('.localisationGPS')
-const locationInput=document.querySelectorAll('.APILocalisation input')
-const commanderBtn=document.querySelectorAll('.localisationGPS')
+const locationInput=Array.from(document.querySelectorAll('.APILocalisation input'))
+const commanderBtn=Array.from(document.querySelectorAll('.localisationGPS'))
 const commanderLocation=document.querySelector('.modalLivraison .Modal')
 const verify=e=>{
+    console.log('d5ala2')
     locationBoolean=false
     console.log(e.target.className)
     switch (e.target.className){
@@ -92,7 +94,7 @@ const verify=e=>{
 //
 const ShowInLocation=(lat,lng)=>{
     commanderBtn.forEach(a=>{
-        a.nextElementSibling.nextElementSibling.innerHTML='Vous etes localisé<br>On va vous livrer a ladresse détécté de votre GPS<br>'
+        a.nextElementSibling.nextElementSibling.innerHTML='Vous etes localisé<br>On va vous livrer a ladresse détécté<br>'
                 })
     document.querySelector('.valueLocation').innerHTML=`<h6 class='FermerWase'>X</h6><iframe src="https://embed.waze.com/iframe?zoom=15&lat=${lat}&lon=${lng}"
     width="300" height="400"></iframe>`
@@ -124,6 +126,7 @@ b.addEventListener('click',getPosition)
 locationInput.forEach(a=>{
     a.addEventListener('input',verify)
 })
+
 })
 document.querySelector('.utiliserMap').addEventListener('click',e=>{
     inputsLocation.forEach(a=>{
@@ -133,7 +136,11 @@ document.querySelector('.utiliserMap').addEventListener('click',e=>{
     e.target.classList.add('checked')
     e.target.style.backgroundColor='red'
     ajouterGPSorPersonnelData.innerHTML=render.usePersonnelData()
-    let routeDonnée
+
+
+
+
+let routeDonnée
 let klmDonnée
 let aproxDonnée
 let locationBoolean
@@ -184,7 +191,7 @@ const verify=e=>{
 //
 const ShowInLocation=(lat,lng)=>{
     commanderBtn.forEach(a=>{
-        a.nextElementSibling.nextElementSibling.innerHTML='Vous etes localisé<br>On va vous livrer a ladresse détécté de votre GPS<br>'
+        a.nextElementSibling.nextElementSibling.innerHTML='Vous etes localisé<br>On va vous livrer a ladresse détécté<br>'
                 })
     document.querySelector('.valueLocation').innerHTML=`<h6 class='FermerWase'>X</h6><iframe src="https://embed.waze.com/iframe?zoom=15&lat=${lat}&lon=${lng}"
     width="300" height="400"></iframe>`

@@ -297,7 +297,6 @@ button{
 line-height: 1.5em;
 }
 .valueLocation{
-    background-color: paleturquoise;
     position: absolute;
     bottom: 40px;
     left: 20px;

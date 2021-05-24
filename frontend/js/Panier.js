@@ -10,6 +10,10 @@ let objectOfCourse={}
 let z=0
 let objectCourses={}
 let saladeNbr=0
+let exist
+let nbrDesSaladesPersonnalisées=1
+let TRlength
+let locationToSend
 //Events
 lesPetitDéj.forEach(a =>a.addEventListener('click',lesPetitDéjCreation))
 lesSaladesRecommandées.forEach(a =>a.addEventListener('click',lesSaladesRecommandéesCreation))
@@ -74,6 +78,7 @@ shoppingCartHTML()
 }
 function lesBasesDesSaladesCreation(e){
     objectCourses.id='Salade Personnalisée'
+    objectCourses.nbrDesSalade=nbrDesSaladesPersonnalisées
     if(e.target.parentElement.parentElement.parentElement.className=='Bases'){
         if(e.target.className=='checked')
         objectCourses.Bases=e.target.id+'/'+e.target.nextElementSibling.querySelector('small').innerHTML
@@ -132,8 +137,8 @@ function ajouterUnRepasModal(e){
     })
     z+=1
     objectCourses={}
-    saladeNbr++
-    console.log(shoppingCardProducts)
+    if(e.target.parentElement.parentElement.className=='PersSalade')
+    nbrDesSaladesPersonnalisées+=1
 }
 function RefreshPaginationModal(e){
     objectCourses={}
@@ -293,13 +298,13 @@ function shoppingCartHTML(){
             
 
                 }
-                let constNbrSalade=saladeNbr
+                if(course.nbrDesSalade){
                 let rowsaladeNbr = document.createElement('tr');
                 rowsaladeNbr.innerHTML=`<tr>
-                <td class="nbrSalades" colspan="3" style='font-weight:bold;text-align:center'>Salade numéro ${constNbrSalade}</td>
+                <td class="nbrSalades" colspan="3" style='font-weight:bold;text-align:center'>Salade numéro ${course.nbrDesSalade}</td>
                 </tr>`
                 document.querySelector('.PersonnaliséPanier').insertAdjacentElement('afterend',rowsaladeNbr)
-                
+                }
                 break;
             case 'Desssert' :
                 
@@ -345,8 +350,10 @@ function shoppingCartHTML(){
         if(a.children[1])
         a.style.display='block'
     })
-  let TRlength=Array.from(document.querySelectorAll('tr')).length
-  document.querySelector('.nbrCmd').innerHTML=TRlength-5
+let TRnbrSaladeLength=Array.from(document.querySelectorAll('.nbrSalades')).length
+TRlength=Array.from(document.querySelectorAll('tr')).length
+document.querySelector('.nbrCmd').innerHTML=TRlength-5-TRnbrSaladeLength
+console.log(shoppingCardProducts)
 }
 function clearHTML(){
     Array.from(document.querySelectorAll('table td')).forEach(a=>{
@@ -480,10 +487,11 @@ document.querySelector('.CommandePanier').addEventListener('click',e=>{
     }
 })
 //addLocation
+let locationBoolean
+function addLocation(){
 let routeDonnée
 let klmDonnée
 let aproxDonnée
-let locationBoolean
 let positionInData
 const localiser=document.querySelector('.localisationGPS')
 const locationInput=document.querySelectorAll('.APILocalisation input')
@@ -528,10 +536,9 @@ const verify=e=>{
     commanderLocation.style.border=''
     }
 }
-//
 const ShowInLocation=(lat,lng)=>{
     commanderBtn.forEach(a=>{
-        a.nextElementSibling.nextElementSibling.innerHTML='Vous etes localisé<br>On va vous livrer a ladresse détécté de votre GPS<br>'
+        a.nextElementSibling.nextElementSibling.innerHTML='Vous etes localisé<br>On va vous livrer a ladresse détécté<br>'
                 })
     document.querySelector('.valueLocation').innerHTML=`<h6 class='FermerWase'>X</h6><iframe src="https://embed.waze.com/iframe?zoom=15&lat=${lat}&lon=${lng}"
     width="300" height="400"></iframe>`
@@ -563,3 +570,250 @@ b.addEventListener('click',getPosition)
 locationInput.forEach(a=>{
     a.addEventListener('input',verify)
 })
+}
+addLocation()
+//addLoction1
+/*function addLocation1(e){
+    console.log('d5alna1')
+    let routeDonnée1
+    let klmDonnée1
+    let aproxDonnée1
+    let positionInData1
+    console.log(e.target)
+    locationBoolean=false
+    console.log(e.target.className)
+    switch (e.target.className){
+        case 'localRouteBtn':
+            let patternRoute=/Sfax Route:([a-zA-Z]+)/
+            patternRoute.test(e.target.value) ? routeDonnée1='Donnée validée' : routeDonnée1='Donnée non validée (ex:Sfax Route:Gremda)';locationBoolean=false;
+            e.target.nextElementSibling.innerHTML=routeDonnée1
+            break;
+        case 'localKlmBtn':
+            let patternKlm=/Klm:([1-9,.]+)/
+            patternKlm.test(e.target.value) ? klmDonnée1='Donnée validée' : klmDonnée1='Donnée non validée (ex:klm:4)';locationBoolean=false;
+            e.target.nextElementSibling.innerHTML=klmDonnée1
+            break;
+        case 'localAproxBtn':
+            let patternAppr=/A proximité de:([a-zA-Z]+)/
+            patternAppr.test(e.target.value) ? aproxDonnée1='Donnée validée' : aproxDonnée1='Donnée non validée (ex:A proximité de:Anas+)';locationBoolean=false;   
+            e.target.nextElementSibling.innerHTML=aproxDonnée1
+            break;
+    }
+    if(routeDonnée1 === klmDonnée1 && aproxDonnée1==='Donnée validée'){
+    localiser.nextElementSibling.nextElementSibling.innerHTML=' '
+    locationBoolean=true
+}
+    else
+    locationBoolean=false
+    if (locationBoolean){
+    positionInData1=document.querySelector('.valueLocation1').innerHTML
+    console.log(positionInData1)
+    document.querySelector('.valueLocation1').innerHTML=`On va vous livrer a route ${document.querySelector('.localRouteBtn').value.split(':')[1]} klm${document.querySelector('.localKlmBtn').value.split(':')[1]} a proximité de ${document.querySelector('.localAproxBtn').value.split(':')[1]}  `
+    }
+    else{
+    document.querySelector('.valueLocation1').innerHTML=''
+    }
+
+}*/
+function addLocation2(){
+    let positionInData1
+    console.log('d5alna2')
+    const localiser=document.querySelector('.localisationGPS1')
+    const locationInput=Array.from(document.querySelectorAll('.APILocalisation1 input'))
+const ShowInLocation=(lat,lng)=>{
+    console.log('d5al 7atta')
+    localiser.nextElementSibling.nextElementSibling.innerHTML='Vous etes localisé<br>On va vous livrer a ladresse détécté<br>'
+    document.querySelector('.valueLocation1').innerHTML=`<h6 class='FermerWase1'>X</h6><iframe src="https://embed.waze.com/iframe?zoom=15&lat=${lat}&lon=${lng}"
+    width="300" height="400"></iframe>`
+    document.querySelector('.valueLocation1').style.padding='0'
+    document.querySelector('.FermerWase1').addEventListener('click',e=>{
+        document.querySelector('.valueLocation1').innerHTML=''
+        document.querySelector('.valueLocation1').style.padding='10px'
+        
+    })
+    locationBoolean=true
+}
+const success=pos=>{
+    console.log('d5alpos')
+    let lat= pos.coords.latitude
+    let lng= pos.coords.longitude
+    positionInData1='lat :' + lat + ' lng : '+lng
+    locationToSend='lat :' + lat + ' lng : '+lng
+    console.log(positionInData1)
+    ShowInLocation(lat,lng)
+}
+const error=err=>{
+    localiser.nextElementSibling.innerHTML='Erreur au niveau de localisation'
+}
+const getPosition=e=>{
+    console.log('d5altget')
+    navigator.geolocation.getCurrentPosition(success, error);
+}
+getPosition()
+console.log(locationBoolean)
+}
+
+
+document.querySelector('.domicile').addEventListener('click',e=>{
+    function slowAlert(){
+        Array.from(document.querySelectorAll('.CompagnieDeLivraison ul li')).forEach(a=>{
+            a.addEventListener('click',e=>{
+            verifyGreen()
+        exist= Array.from(document.querySelectorAll('.CompagnieDeLivraison ul li')).some(a=>a.style.border=='4px solid red')
+        })
+        })
+            document.querySelector('.vous_localiser').addEventListener('click',e=>{
+                console.log("here")
+                window.setTimeout(now,0)
+                function now(){
+                    document.querySelector('.localisationGPS1').addEventListener('click',e=>{
+                        verifyGreen()
+                        addLocation2()
+                    })
+                    }
+            })
+            document.querySelector('.utiliserMap').addEventListener('click',e=>{
+                console.log('mapamp')
+                window.setTimeout(now,0)
+                
+                function now(){
+                    document.querySelectorAll('.APILocalisation1 input').forEach(a=>{
+                        
+                        a.addEventListener('input',e=>{
+                            verifyGreen()
+                            console.log('d5alna1')
+    let routeDonnée1
+    let klmDonnée1
+    let aproxDonnée1
+    let positionInData1
+    console.log(e.target)
+    locationBoolean=false
+    console.log(e.target.className)
+    switch (e.target.className.split(' ')[0]){
+        case 'localRouteBtn':
+            let patternRoute=/Sfax Route:([a-zA-Z]+)/
+            patternRoute.test(e.target.value) ? routeDonnée1='Donnée validée' : routeDonnée1='Donnée non validée (ex:Sfax Route:Gremda)';locationBoolean=false;
+            e.target.nextElementSibling.innerHTML=routeDonnée1
+            let route=e.target.value
+            break;
+        case 'localKlmBtn':
+            let patternKlm=/Klm:([1-9,.]+)/
+            patternKlm.test(e.target.value) ? klmDonnée1='Donnée validée' : klmDonnée1='Donnée non validée (ex:klm:4)';locationBoolean=false;
+            e.target.nextElementSibling.innerHTML=klmDonnée1
+            let klmaa=e.target.value
+            break;
+        case 'localAproxBtn':
+            let patternAppr=/A proximité de:([a-zA-Z]+)/
+            patternAppr.test(e.target.value) ? aproxDonnée1='Donnée validée' : aproxDonnée1='Donnée non validée (ex:A proximité de:Anas+)';locationBoolean=false;   
+            e.target.nextElementSibling.innerHTML=aproxDonnée1
+            let klmaaa=e.target.value
+            break;
+            locationToSend=`Klm:${route}A proximité de:${klmaaa}Route:${klmaa}`
+            console.log(routeDonnée1 + klmDonnée1 + aproxDonnée1)
+    }
+    if(routeDonnée1 === klmDonnée1 && aproxDonnée1==='Donnée validée'){
+    locationBoolean=true
+}
+    else
+    locationBoolean=false
+    
+                        })
+                    })
+                }
+            })
+    }
+    let timeoutID
+    function delayedAlert() {
+        timeoutID = window.setTimeout(slowAlert, 0);
+      }
+      delayedAlert()
+})
+
+let chez_nousInput=document.getElementById('chez_nous')
+let domicileInput=document.getElementById('domicile')
+let submitButton=document.querySelector('.cmd')
+Array.from(document.querySelectorAll('.insideProc input')).forEach(a=>{
+    a.addEventListener('input',e=>verifyGreen())
+    
+})
+
+
+
+function verifyGreen(){
+        let TRLength=Array.from(document.querySelectorAll('tr')).length>5
+        let nom_et_prenomValue=document.getElementById('name_prenom').value!=''
+        let telValue=document.getElementById('tel').value!=''
+        let dateAndHourValue=document.getElementById('dateAndHour').value!=''
+        let chezNous_DomicileValue=Array.from(document.querySelectorAll('.insideProc input[type=radio]'))
+        let chezNous_DomicileBoolean=chezNous_DomicileValue.some(a=>a.className=='checked')
+        
+        
+                console.log(`length5:+${TRLength}`)
+                console.log('name'+nom_et_prenomValue)
+                console.log('Date'+dateAndHourValue)
+                console.log('Tel'+telValue)
+                console.log('chezNous_DomicileBoolean'+chezNous_DomicileBoolean)
+                console.log('locationBoolean'+locationBoolean)
+                console.log(exist)
+                if(TRLength==true && nom_et_prenomValue){
+                    console.log('good name')
+                    if(telValue&&dateAndHourValue){
+                        if(chezNous_DomicileBoolean){
+                            if(chez_nousInput.className=='checked'){
+                                exist=false
+                                console.log('greenCheznous')
+                                submitButton.style.border='2px solid green'
+                                submitButton.style.color= 'green'
+                            }
+                            else if(domicileInput.className=='checked'){
+                                if(exist&&locationBoolean){
+                                console.log('greenChezVous')
+                                    submitButton.style.border='2px solid green'
+                                    submitButton.style.color= 'green' 
+                                }
+                            }
+                            else{
+                                submitButton.style.border='2px solid green'
+                                submitButton.style.color= 'green'
+                            }
+                        }
+                    }
+                }
+                else{
+                submitButton.style.border='2px solid gray'
+                submitButton.style.color= 'gray'
+                }
+                document.querySelector('.cmd').addEventListener('click',e=>{
+                    if(submitButton.style.border=='2px solid green' && domicileInput.className=='checked'){
+                    domicileSend()}
+                    else if(submitButton.style.border=='2px solid green' && chez_nousInput.className=='checked')
+                    chezNousSend()  
+                })
+                          
+}
+
+function chezNousSend(){
+const domicileObjectSend={
+Name:document.getElementById('name_prenom').value,
+phoneNbr:document.getElementById('tel').value,
+Date:document.getElementById('dateAndHour').value,
+Commande:shoppingCardProducts
+}
+window.alert('La requete POST envoyée au serveur: '+JSON.stringify(domicileObjectSend))}
+function domicileSend(){
+    let livreur
+    Array.from(document.querySelectorAll('.CompagnieDeLivraison ul li')).forEach(a=>{
+        if(a.classList.contains('checked'))
+        livreur=a.className.split(' ')[0]
+    })
+const chezNousObjectSend={
+    Name:document.getElementById('name_prenom').value,
+    phoneNbr:document.getElementById('tel').value,
+    Date:document.getElementById('dateAndHour').value,
+    Commande:shoppingCardProducts,
+    Livreur:livreur,
+    location:locationToSend
+}
+console.log(chezNousObjectSend)
+window.alert('La requete POST envoyée au serveur: '+JSON.stringify(chezNousObjectSend))
+}

@@ -21,17 +21,19 @@ export const render={
         <div class="ajouterGPSorPersonnelData"></div>`
     },
     useGPS:()=>{
-        return `<button class="localisationGPS">Localiser</button><br><p></p>`
+        return `<button class="localisationGPS1 localisationGPS">Localiser</button><br><p></p>
+        <h4 class="valueLocation1 valueLocation"></h4>`
     },
     usePersonnelData:()=>{
-        return `<div class="APILocalisation APILocalisationAdd">
+        return `<div class=" APILocalisationAdd APILocalisation1 APILocalisation">
         <h4>Veillez entre votre localisation</h4>
-        <input type="text" class="localRouteBtn" value="Sfax Route:">
+        <input type="text" class="localRouteBtn localRouteBtn1" value="Sfax Route:">
         <small></small>
-        <input type="text" class="localKlmBtn" value="Klm:">
+        <input type="text" class="localKlmBtn localKlmBtn1" value="Klm:">
         <small></small>
-        <input type="text" class="localAproxBtn" value="A proximité de:">
+        <input type="text" class="localAproxBtn localAproxBtn1" value="A proximité de:">
         <small></small>
-    </div>`
+    </div>
+    <h4 class="valueLocation1 valueLocation"></h4>`
     }
 }

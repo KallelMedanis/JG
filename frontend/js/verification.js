@@ -2,11 +2,8 @@ let commande
 let verification ={  
 verifBtns:function(){
     allButtons=Array.from(document.querySelectorAll('input.Modal[type=button]'))
-    console.log(allButtons)
     allButtons.forEach(modalElement=>{
-        console.log(modalElement)
         toSwitch=modalElement.parentElement.parentElement.className
-        console.log(toSwitch)
     switch (toSwitch){
         case 'modalPetitDej':
         let petitDejInputs=Array.from(document.querySelectorAll('.modalPetitDej .flex ul li input'))
@@ -14,7 +11,6 @@ verifBtns:function(){
             a.addEventListener('click',e=>{
                 hi = Array.from(a.parentElement.parentElement.parentElement.parentElement.querySelectorAll('.btnss input'))
                 if(a.className==='checked'){
-                    console.log(hi)
                     hi[0].style.border='2px solid gold'
                     hi[1].style.border='2px solid gold'
                     hi[0].style.color='gold'
@@ -41,11 +37,8 @@ verifBtns:function(){
                 else{
                     nbr-=2
                 }
-                console.log('mrigel',a)
                 hi=Array.from(a.parentElement.parentElement.parentElement.parentElement.querySelectorAll('.btnss input'))
-                console.log(hi,a.checked)
                 if(nbr>0){
-                    console.log('mrigelhtdfc')
                     hi[0].style.border='2px solid gold'
                     hi[1].style.border='2px solid gold'
                     hi[0].style.color='gold'
@@ -69,7 +62,6 @@ verifBtns:function(){
                             nbrBase=1
                             else
                             nbrBase=0
-                            console.log(nbrBase)
                         })
                         
                     })
@@ -79,7 +71,7 @@ verifBtns:function(){
                                 nbrIng=nbrIng+1
                                 else
                                 nbrIng=nbrIng-1
-                                console.log(nbrIng)})
+                                })
                             
                         })
                             document.querySelectorAll('.PersSalade .Sauce input').forEach(Sauce=>{
@@ -92,8 +84,7 @@ verifBtns:function(){
                                     nbrSauce-=1
                                     e.target.checked=false
                                 }
-                                console.log(nbrSauce)})
-                                console.log(nbrBase,nbrIng,nbrSauce)
+                                })
                             })
                             ingrédientsParsSalade.forEach(a=>{
                                 a.addEventListener('click',e=>{
@@ -119,7 +110,6 @@ verifBtns:function(){
         let nbrOccOfRexSalade=0
         Array.from(document.querySelectorAll('.RecSalade .nosSaladeRec>div')).forEach(a=>{
             a.addEventListener('click',e=>{
-                console.log(a)
                 if(a.className.indexOf('checked')==-1 && a.style.border=='5px solid gold')
                 nbrOccOfRexSalade=0
                 else

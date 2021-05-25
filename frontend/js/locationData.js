@@ -1,7 +1,6 @@
 import { render } from "./render.js";
 const livreur=document.querySelector('.livreur')
 document.getElementById('chez_nous').addEventListener('click',e=>{
-    console.log(e.target)
     /*if(e.target.nextElementSibling.nextElementSibling.classList.contains('checked')==false)
     e.target.classList.toggle('checked')
     console.log(e.target.className)
@@ -69,9 +68,7 @@ const locationInput=Array.from(document.querySelectorAll('.APILocalisation input
 const commanderBtn=Array.from(document.querySelectorAll('.localisationGPS'))
 const commanderLocation=document.querySelector('.modalLivraison .Modal')
 const verify=e=>{
-    console.log('d5ala2')
     locationBoolean=false
-    console.log(e.target.className)
     switch (e.target.className){
         case 'localRouteBtn':
             let patternRoute=/Sfax Route:([a-zA-Z]+)/
@@ -95,11 +92,8 @@ const verify=e=>{
 }
     else
     locationBoolean=false
-    console.log(routeDonnée + klmDonnée + aproxDonnée)
-    console.log(locationBoolean)
     if (locationBoolean){
     positionInData=document.querySelector('.valueLocation').innerHTML
-    console.log(positionInData)
     commanderLocation.style.border='2px solid gold'
     document.querySelector('.valueLocation').innerHTML=`On va vous livrer a route ${document.querySelector('.localRouteBtn').value.split(':')[1]} klm${document.querySelector('.localKlmBtn').value.split(':')[1]} a proximité de ${document.querySelector('.localAproxBtn').value.split(':')[1]}  `
     }
@@ -128,7 +122,6 @@ const success=pos=>{
     let lat= pos.coords.latitude
     let lng= pos.coords.longitude
     positionInData='lat :' + lat + ' lng : '+lng
-    console.log(positionInData)
     ShowInLocation(lat,lng)
 }
 const error=err=>{
@@ -168,7 +161,6 @@ const commanderBtn=document.querySelectorAll('.localisationGPS')
 const commanderLocation=document.querySelector('.modalLivraison .Modal')
 const verify=e=>{
     locationBoolean=false
-    console.log(e.target.className)
     switch (e.target.className){
         case 'localRouteBtn':
             let patternRoute=/Sfax Route:([a-zA-Z]+)/
@@ -192,11 +184,8 @@ const verify=e=>{
 }
     else
     locationBoolean=false
-    console.log(routeDonnée + klmDonnée + aproxDonnée)
-    console.log(locationBoolean)
     if (locationBoolean){
     positionInData=document.querySelector('.valueLocation').innerHTML
-    console.log(positionInData)
     commanderLocation.style.border='2px solid gold'
     document.querySelector('.valueLocation').innerHTML=`On va vous livrer a route ${document.querySelector('.localRouteBtn').value.split(':')[1]} klm${document.querySelector('.localKlmBtn').value.split(':')[1]} a proximité de ${document.querySelector('.localAproxBtn').value.split(':')[1]}  `
     }
@@ -225,7 +214,6 @@ const success=pos=>{
     let lat= pos.coords.latitude
     let lng= pos.coords.longitude
     positionInData='lat :' + lat + ' lng : '+lng
-    console.log(positionInData)
     ShowInLocation(lat,lng)
 }
 const error=err=>{

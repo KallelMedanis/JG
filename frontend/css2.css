@@ -1,0 +1,13 @@
+table{
+    margin:20px;
+    width: 98%;
+}
+table,
+td {
+    border: 1px solid #333;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}

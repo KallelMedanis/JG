@@ -7,7 +7,6 @@ for (let k = 0; k < classTab.length; k++) {
         if(classTab[k].children[0].className=='checked')
         nbr=nbr+1  
     }
-    console.log(nbr)
 return nbr
 
 }
@@ -17,9 +16,7 @@ let tabPag=[]
 let tabPagFalse=[]
 const rampArray=function(e){
     tabPagFalse=[]
-    console.log(e.id.substr(e.id.indexOf('et_')+3,e.length))
     tabPag.push(e.id.substr(e.id.indexOf('et_')+3,e.length)+'Pag')
-    console.log(tabPag)
     pagModalTrue(tabPag)
     allPag.forEach(a=>{
         if(tabPag.includes(a))
@@ -27,11 +24,9 @@ const rampArray=function(e){
         else
         tabPagFalse.push(a)
     })
-    console.log(tabPagFalse)
     pagModalFalse(tabPagFalse)
 }
 const pagModalTrue=function(e){
-    console.log(e)
         for (let j = 0; j < e.length; j++) {
                 if(document.getElementsByClassName(e[j]).length==2){
                     document.getElementsByClassName(e[j])[0].style.display='block'
@@ -43,18 +38,13 @@ const pagModalTrue=function(e){
             }
         }
 const pagModalFalse=function(e){
-    console.log(e)
     for (let j = 0; j < e.length; j++) {
-        console.log(e[j])
                 if(document.getElementsByClassName(e[j]).length==2){
                     document.getElementsByClassName(e[j])[0].style.display='none'
                     document.getElementsByClassName(e[j])[1].style.display='none'
-                    console.log(document.getElementsByClassName(e[j])[0])  
-                    console.log(document.getElementsByClassName(e[j])[1])  
                 }
                     else if (document.getElementsByClassName(e[j]).length==1){
                     document.getElementsByClassName(e[j])[0].style.display='none'
-                    console.log(document.getElementsByClassName(e[j])[0])    
                 }
             }
         }
@@ -87,10 +77,8 @@ classTab=Array.from(a.parentElement.children)
 for (let k = 0; k < classTab.length; k++) {
         tabb=classTab[k].className.split(' ')[1]
         if(tabb=='checked'){
-        console.log(tabb[1])
         nbr+=1}
     }
-    console.log(nbr)
 return nbr
 
 }
@@ -101,9 +89,7 @@ const openModal=function(e){
     e.stopPropagation()
 newTab=[]
     const targetId=e.target.getAttribute("id")
-    console.log(targetId)
     const targetTab= targetId.toString().split('_');
-    console.log(targetTab)
     targetTab.forEach(a=>{
         document.getElementsByClassName(a)[0].addEventListener('click',stopPropagation)
         document.getElementsByClassName(a)[0].style.display=''
@@ -114,7 +100,6 @@ newTab=[]
         if(targetTab.indexOf(allModalClassName[i])==-1)
         newTab.push(allModalClassName[i])
     }
-    console.log(newTab)
     newTab.forEach(a=>{
         document.getElementsByClassName(a)[0].style.display='none'
     })
@@ -165,14 +150,12 @@ document.querySelectorAll('.Modal').forEach(a=>{
         }
         else{
         if(this.classList.contains("more")){
-            console.log(a)
             tabPag=['modalGeneralPag']
             pagModalTrue(['modalGeneralPag'])
             pagModalFalse(['modalSalade1Pag','RecSaladePag','PersSaladePag','modalPetitDejPag','modalDessertPag','lastModalPag'])
             
         }
         else{
-        console.log(a)
         rampArray(this)
         }
         }
@@ -207,14 +190,12 @@ const toggleBase =function(e){
     else if (toggleIt(this)==1 && this.className=='checked')
     this.classList.toggle("checked")
     else if (toggleIt(this)==1 && this.className!='checked'){
-    console.log(this.parentElement.parentElement.children)
     Array.from(this.parentElement.parentElement.children).forEach(a=>{
         if(a.children[0].className=='checked'){
         a.style.border='8px solid white'
         tabb= a.children[0]
     }
     })
-    console.log(tabb)
     tabb.classList.remove("checked")
     this.classList.toggle("checked")
 }
@@ -235,7 +216,6 @@ const toggleSaladeRec =function(e){
     this.classList.toggle("checked")
 
     else if (toggleItRec(this)==1 && this.className!='checked'){
-        console.log(this.parentElement.children)
         Array.from(this.parentElement.children).forEach(a=>{
             if(a.className.split(' ')[1]=='checked'){
             a.style.border='5px solid gold'
@@ -245,7 +225,6 @@ const toggleSaladeRec =function(e){
 
         }
         })
-        console.log(tabb)
     }
 
     if(this.classList.contains("checked"))
@@ -263,14 +242,12 @@ const togglePetitDej =function(e){
     else if (toggleIt(this)==1 && this.className=='checked')
     this.classList.toggle("checked")
     else if (toggleIt(this)==1 && this.className!='checked'){
-    console.log(this.parentElement.parentElement.children)
     Array.from(this.parentElement.parentElement.children).forEach(a=>{
         if(a.children[0].className=='checked'){
         a.children[1].style.border='5px solid gold'
         tabb= a.children[0]
     }
     })
-    console.log(tabb)
     tabb.classList.remove("checked")
     this.classList.toggle("checked")
 }
@@ -303,14 +280,11 @@ document.querySelector('.Pagination').addEventListener('click',function(e){
 const openModalId=function(e){
     let tabPagFalsee=[]
     newTab=[]
-    console.log(e)
     const idModal=Array.from(document.querySelectorAll('.Modal')).map(aa=>aa.id)
-    console.log(idModal)
     idModal.forEach(a=>{
         if(a.indexOf(e)==a.length-e.length){
             
     const targetTab= a.toString().split('_');
-    console.log(targetTab)
     targetTab.forEach(a=>{
         document.getElementsByClassName(a)[0].addEventListener('click',stopPropagation)
         document.getElementsByClassName(a)[0].style.display=''
@@ -322,7 +296,6 @@ const openModalId=function(e){
         if(targetTab.indexOf(allModalClassName[i])==-1)
         newTab.push(allModalClassName[i])
     }
-    console.log(newTab)
     newTab.forEach(a=>{
         document.getElementsByClassName(a)[0].style.display='none'
     })
@@ -331,11 +304,9 @@ const openModalId=function(e){
 })
 let ina
 ina=tabPag.indexOf(e+'Pag')
-console.log(ina)
 for (let k = 0; k < tabPag.length-ina-1; k++) {
     tabPag.pop()
 }
-console.log(tabPag)
 allPag.forEach(a=>{
     if(tabPag.includes(a))
     return
@@ -361,15 +332,10 @@ Array.from(document.querySelectorAll('.Pagination ul li')).forEach(a=>{
     openModalId(a.className.substr(0,a.className.length-3))
     //supprimerPag(this)
         index=tabPag.indexOf(this.className)
-        console.log(index)
         it=tabPag.length-index-1
-        console.log(it)
-        console.log(tabPag)
         for (let i = 0; i < it; i++) {
             tabPagFalse.push(tabPag[index+1+i])
-            console.log(tabPagFalse)
         }
-        console.log(tabPagFalse)
         pagModalFalse(tabPagFalse)
     })
 })

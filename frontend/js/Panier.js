@@ -14,12 +14,13 @@ let exist
 let nbrDesSaladesPersonnalisées=1
 let TRlength
 let locationToSend
+let priceToShow
 //Events
 lesPetitDéj.forEach(a =>a.addEventListener('click',lesPetitDéjCreation))
 lesSaladesRecommandées.forEach(a =>a.addEventListener('click',lesSaladesRecommandéesCreation))
 lesDesserts.forEach(a =>a.addEventListener('click',lesDessertsCreation))
 lesBasesDesSalades.forEach(a =>a.addEventListener('click',lesBasesDesSaladesCreation))
-document.addEventListener('DOMContentLoaded',chargingStorage)
+//document.addEventListener('DOMContentLoaded',chargingStorage)
 ajouterUnRepas.forEach(a =>a.addEventListener('click',ajouterUnRepasModal))
 RefreshPagination.forEach(a =>a.addEventListener('click',RefreshPaginationModal))
 //event Funtions
@@ -43,9 +44,7 @@ function lesPetitDéjCreation(e){
         else
         objectCourses.supp=objectCourses.supp.replace('_'+e.target.id+'/'+e.target.nextElementSibling.querySelector('small').innerHTML,'')
     }
-    console.log(objectCourses)
     shoppingCardProducts[z]=objectCourses
-    console.log(shoppingCardProducts)
     shoppingCartHTML()
 }
 
@@ -58,9 +57,7 @@ function lesSaladesRecommandéesCreation(e){
         delete objectCourses.id
         delete objectCourses.course
     }
-    console.log(objectCourses)
     shoppingCardProducts[z]=objectCourses
-    console.log(shoppingCardProducts)
     shoppingCartHTML()
 }
 function lesDessertsCreation(e){
@@ -71,9 +68,7 @@ if(e.target.checked==true){
 }
 else
 objectCourses.course=objectCourses.course.replace('_'+e.target.value+'/'+e.currentTarget.nextElementSibling.querySelector('span').innerHTML.substr(e.currentTarget.nextElementSibling.querySelector('span').innerHTML.match(/\d/).index,e.currentTarget.nextElementSibling.querySelector('span').innerHTML.match(/\d/).index),'')
-console.log(objectCourses)
 shoppingCardProducts[z]=objectCourses
-console.log(shoppingCardProducts)
 shoppingCartHTML()
 }
 function lesBasesDesSaladesCreation(e){
@@ -109,13 +104,12 @@ function lesBasesDesSaladesCreation(e){
         else
         objectCourses.dessert=objectCourses.dessert.replace('_'+e.target.value+'/'+e.currentTarget.nextElementSibling.querySelector('span').innerHTML.substr(e.currentTarget.nextElementSibling.querySelector('span').innerHTML.match(/\d/).index,e.currentTarget.nextElementSibling.querySelector('span').innerHTML.match(/\d/).index),'')    
     }
-    console.log(objectCourses)
     shoppingCardProducts[z]=objectCourses
-    console.log(shoppingCardProducts)
     shoppingCartHTML()
 }
 function chargingStorage(e){
-    //shoppingCardProducts=JSON.parse(localStorage.getItem('courses')) || []
+    shoppingCardProducts=JSON.parse(localStorage.getItem('courses')) || []
+    shoppingCartHTML()
 }
 function ajouterUnRepasModal(e){
     Array.from(document.querySelectorAll('.Bases input[type=radio]')).forEach(a=>{
@@ -150,7 +144,6 @@ function shoppingCartHTML(){
     })
     let ticket=document.querySelector('.insideTicket')
     let trTables=Array.from(document.querySelectorAll('table tr'))
-    console.log(trTables.length)
     if(trTables.length>4){
         document.querySelector('.hideIfEmpty').style.display='none'
         document.querySelector('.totalPrice').style.display='block'
@@ -176,9 +169,7 @@ function shoppingCartHTML(){
                     arrayCourseSupp = arrayCourseSupp.filter(
                         course => course!== ''
                     )
-                    console.log(arrayCourseSupp)
                     arrayCourseSupp.forEach(a=>{
-                        console.log(a)
                         let namAndPriceSupp=a.split('/')
                         let rowSupp=document.createElement('tr');
                         let divSupp=document.createElement('div')
@@ -217,7 +208,6 @@ function shoppingCartHTML(){
                let rowPersonnalisée = document.createElement('tr');
                 if(course.Bases){
                 let baseArray=course.Bases.split('/')
-                console.log(course)
                 let divBase=document.createElement('div')
                 let rowBase = document.createElement('tr');
                 rowBase.innerHTML=`<tr>
@@ -283,7 +273,6 @@ function shoppingCartHTML(){
                 let divDessert=document.createElement('div')
                     let rowDessert = document.createElement('tr');
                     let arrayCourseDessertPriceAndName=a.split('/')
-                    console.log(arrayCourseDessertPriceAndName)
                     rowDessert.innerHTML =`<tr>
                 <td>Dessert:${arrayCourseDessertPriceAndName[0]}</td>
                 <td>${arrayCourseDessertPriceAndName[1]}</td>
@@ -313,12 +302,10 @@ function shoppingCartHTML(){
                 arrayCourseDessert = arrayCourseDessert.filter(
                     course => course!== ''
                 )
-                console.log(arrayCourseDessert)
                 arrayCourseDessert.forEach(a=>{
                     let divNewDessert=document.createElement('div')
                     let rowDessert = document.createElement('tr');
                     let arrayCourseDessertPriceAndName=a.split('/')
-                    console.log(arrayCourseDessertPriceAndName)
                     rowDessert.innerHTML =`<tr>
                 <td>${arrayCourseDessertPriceAndName[0]}</td>
                 <td>${arrayCourseDessertPriceAndName[1]}</td>
@@ -336,7 +323,7 @@ function shoppingCartHTML(){
         removeTitle()
         syncStorage()
     })
-    let priceToShow=0
+    priceToShow=0
     let priceChange=document.getElementById('priceGonnaChange')
     let allTD=Array.from(document.querySelectorAll('td'))
     let allTdDt=allTD.filter(a=>a.innerHTML.indexOf('DT')!=-1)
@@ -353,11 +340,9 @@ function shoppingCartHTML(){
 let TRnbrSaladeLength=Array.from(document.querySelectorAll('.nbrSalades')).length
 TRlength=Array.from(document.querySelectorAll('tr')).length
 document.querySelector('.nbrCmd').innerHTML=TRlength-5-TRnbrSaladeLength
-console.log(shoppingCardProducts)
 }
 function clearHTML(){
     Array.from(document.querySelectorAll('table td')).forEach(a=>{
-        console.log(a.parentElement)
         if(a.classList.contains('bigSizeTable')==false)
         a.parentElement.remove()
     })
@@ -366,7 +351,7 @@ function clearHTML(){
     })
 }
 function syncStorage(){
-    //localStorage.setItem('courses', JSON.stringify(shoppingCardProducts));
+    localStorage.setItem('courses', JSON.stringify(shoppingCardProducts));
 }
 
 function removeTitle(){
@@ -408,7 +393,6 @@ document.querySelector('.CommandePanier').addEventListener('click',e=>{
                     else
                     return a
                 })
-                console.log(shoppingCardProducts)
                 shoppingCartHTML()
                 break;
             case 'recommandéeRemove':
@@ -429,16 +413,11 @@ document.querySelector('.CommandePanier').addEventListener('click',e=>{
                 })
                 break;
             case 'ingrédientRemove':
-                console.log(shoppingCardProducts)
                 let ccs
                 shoppingCardProducts.forEach(a=>{
-                    console.log(a)
-                    console.log(e.target.previousElementSibling.previousElementSibling.innerHTML.substr(11,e.target.previousElementSibling.previousElementSibling.innerHTML.length))
                     if((a.Ingrédints.indexOf(e.target.previousElementSibling.previousElementSibling.innerHTML.substr(11,e.target.previousElementSibling.previousElementSibling.innerHTML.length)))!=-1){
-                        console.log('_'+e.target.previousElementSibling.previousElementSibling.innerHTML.substr(11,e.target.previousElementSibling.previousElementSibling.innerHTML.length)+'/'+e.target.previousElementSibling.innerHTML)
                          ccs=a.Ingrédints.split(`_${e.target.previousElementSibling.previousElementSibling.innerHTML.substr(11,e.target.previousElementSibling.previousElementSibling.innerHTML.length)}`+'/'+`${e.target.previousElementSibling.innerHTML}`)
                     }
-                    console.log(ccs)
                     let newCourseDessert=ccs.join('')
                     a.Ingrédints=newCourseDessert
                 })
@@ -447,7 +426,6 @@ document.querySelector('.CommandePanier').addEventListener('click',e=>{
             case 'sauceRemove':
                 let sc
                 shoppingCardProducts.forEach(a=>{
-                    console.log(e.target.previousElementSibling.previousElementSibling.innerHTML.substr(6,e.target.previousElementSibling.previousElementSibling.innerHTML.length))
                     if(a.Sauce.indexOf(e.target.previousElementSibling.previousElementSibling.innerHTML.substr(6,e.target.previousElementSibling.previousElementSibling.innerHTML.length))!=-1){
                         sc=a.Sauce.split(`_${e.target.previousElementSibling.previousElementSibling.innerHTML.substr(6,e.target.previousElementSibling.previousElementSibling.innerHTML.length)}`)
                     }
@@ -460,11 +438,9 @@ document.querySelector('.CommandePanier').addEventListener('click',e=>{
                 let cs
                 shoppingCardProducts.forEach(a=>{
                     if(a.dessert.indexOf(e.target.previousElementSibling.previousElementSibling.innerHTML.substr(8,e.target.previousElementSibling.previousElementSibling.innerHTML.length))!=-1){
-                        console.log('_'+e.target.previousElementSibling.previousElementSibling.innerHTML+'/'+e.target.previousElementSibling.innerHTML)
                          cs=a.dessert.split(`_${e.target.previousElementSibling.previousElementSibling.innerHTML.substr(8,e.target.previousElementSibling.previousElementSibling.innerHTML.length)}`+'/'+`${e.target.previousElementSibling.innerHTML}`)
 
                     }
-                    console.log(cs)
                     let newCourseDessert=cs.join('')
                     a.dessert=newCourseDessert
                 })
@@ -474,11 +450,9 @@ document.querySelector('.CommandePanier').addEventListener('click',e=>{
                 let cc
                 shoppingCardProducts.forEach(a=>{
                     if(a.course.indexOf(e.target.previousElementSibling.previousElementSibling.innerHTML)!=-1){
-                        console.log('_'+e.target.previousElementSibling.previousElementSibling.innerHTML+'/'+e.target.previousElementSibling.innerHTML)
                          cc=a.course.split(`_${e.target.previousElementSibling.previousElementSibling.innerHTML}`+'/'+`${e.target.previousElementSibling.innerHTML}`)
 
                     }
-                    console.log(cc)
                     let newCourseDessert=cc.join('')
                     a.course=newCourseDessert
                 })
@@ -500,7 +474,6 @@ const commanderBtn=document.querySelectorAll('.localisationGPS')
 const commanderLocation=document.querySelector('.modalLivraison .Modal')
 const verify=e=>{
     locationBoolean=false
-    console.log(e.target.className)
     switch (e.target.className){
         case 'localRouteBtn':
             let patternRoute=/Sfax Route:([a-zA-Z]+)/
@@ -524,11 +497,8 @@ const verify=e=>{
 }
     else
     locationBoolean=false
-    console.log(routeDonnée + klmDonnée + aproxDonnée)
-    console.log(locationBoolean)
     if (locationBoolean){
     positionInData=document.querySelector('.valueLocation').innerHTML
-    console.log(positionInData)
     commanderLocation.style.border='2px solid gold'
     document.querySelector('.valueLocation').innerHTML=`On va vous livrer a route ${document.querySelector('.localRouteBtn').value.split(':')[1]} klm${document.querySelector('.localKlmBtn').value.split(':')[1]} a proximité de ${document.querySelector('.localAproxBtn').value.split(':')[1]}  `
     }
@@ -556,7 +526,6 @@ const success=pos=>{
     let lat= pos.coords.latitude
     let lng= pos.coords.longitude
     positionInData='lat :' + lat + ' lng : '+lng
-    console.log(positionInData)
     ShowInLocation(lat,lng)
 }
 const error=err=>{
@@ -618,11 +587,9 @@ addLocation()
 }*/
 function addLocation2(){
     let positionInData1
-    console.log('d5alna2')
     const localiser=document.querySelector('.localisationGPS1')
     const locationInput=Array.from(document.querySelectorAll('.APILocalisation1 input'))
 const ShowInLocation=(lat,lng)=>{
-    console.log('d5al 7atta')
     localiser.nextElementSibling.nextElementSibling.innerHTML='Vous etes localisé<br>On va vous livrer a ladresse détécté<br>'
     document.querySelector('.valueLocation1').innerHTML=`<h6 class='FermerWase1'>X</h6><iframe src="https://embed.waze.com/iframe?zoom=15&lat=${lat}&lon=${lng}"
     width="300" height="400"></iframe>`
@@ -635,23 +602,19 @@ const ShowInLocation=(lat,lng)=>{
     locationBoolean=true
 }
 const success=pos=>{
-    console.log('d5alpos')
     let lat= pos.coords.latitude
     let lng= pos.coords.longitude
     positionInData1='lat :' + lat + ' lng : '+lng
     locationToSend='lat :' + lat + ' lng : '+lng
-    console.log(positionInData1)
     ShowInLocation(lat,lng)
 }
 const error=err=>{
     localiser.nextElementSibling.innerHTML='Erreur au niveau de localisation'
 }
 const getPosition=e=>{
-    console.log('d5altget')
     navigator.geolocation.getCurrentPosition(success, error);
 }
 getPosition()
-console.log(locationBoolean)
 }
 
 
@@ -664,7 +627,6 @@ document.querySelector('.domicile').addEventListener('click',e=>{
         })
         })
             document.querySelector('.vous_localiser').addEventListener('click',e=>{
-                console.log("here")
                 window.setTimeout(now,0)
                 function now(){
                     document.querySelector('.localisationGPS1').addEventListener('click',e=>{
@@ -675,28 +637,23 @@ document.querySelector('.domicile').addEventListener('click',e=>{
             })
             document.querySelector('.utiliserMap').addEventListener('click',e=>{
     let route,klmaa,klmaaa
-                console.log('mapamp')
                 window.setTimeout(now,0)
                 
                 function now(){
                     document.querySelectorAll('.APILocalisation1 input').forEach(a=>{
                         a.addEventListener('input',e=>{
                             verifyGreen()
-                            console.log('d5alna1')
     let routeDonnée1
     let klmDonnée1
     let aproxDonnée1
     let positionInData1
-    console.log(e.target)
     locationBoolean=false
-    console.log(e.target.className)
     switch (e.target.className.split(' ')[0]){
         case 'localRouteBtn':
             let patternRoute=/Sfax Route:([a-zA-Z]+)/
             patternRoute.test(e.target.value) ? routeDonnée1='Donnée validée' : routeDonnée1='Donnée non validée (ex:Sfax Route:Gremda)';locationBoolean=false;
             e.target.nextElementSibling.innerHTML=routeDonnée1
             route=e.target.value
-            console.log(route)
             break;
         case 'localKlmBtn':
             let patternKlm=/Klm:([1-9,.]+)/
@@ -717,7 +674,6 @@ document.querySelector('.domicile').addEventListener('click',e=>{
 }
     else
     locationBoolean=false
-    console.log(route+klmaaa+klmaa)
                         locationToSend=`${route} ${klmaa} ${klmaaa}`
                         })
  
@@ -752,26 +708,16 @@ function verifyGreen(){
         let chezNous_DomicileBoolean=chezNous_DomicileValue.some(a=>a.className=='checked')
         
         
-                console.log(`length5:+${TRLength}`)
-                console.log('name'+nom_et_prenomValue)
-                console.log('Date'+dateAndHourValue)
-                console.log('Tel'+telValue)
-                console.log('chezNous_DomicileBoolean'+chezNous_DomicileBoolean)
-                console.log('locationBoolean'+locationBoolean)
-                console.log(exist)
                 if(TRLength==true && nom_et_prenomValue){
-                    console.log('good name')
                     if(telValue&&dateAndHourValue){
                         if(chezNous_DomicileBoolean){
                             if(chez_nousInput.className=='checked'){
                                 exist=false
-                                console.log('greenCheznous')
                                 submitButton.style.border='2px solid green'
                                 submitButton.style.color= 'green'
                             }
                             else if(domicileInput.className=='checked'){
                                 if(exist&&locationBoolean){
-                                console.log('greenChezVous')
                                     submitButton.style.border='2px solid green'
                                     submitButton.style.color= 'green' 
                                 }
@@ -787,23 +733,33 @@ function verifyGreen(){
                 submitButton.style.border='2px solid gray'
                 submitButton.style.color= 'gray'
                 }
-                document.querySelector('.cmd').addEventListener('click',e=>{
-                    if(submitButton.style.border=='2px solid green' && domicileInput.className=='checked'){
-                    domicileSend()}
-                    else if(submitButton.style.border=='2px solid green' && chez_nousInput.className=='checked')
-                    chezNousSend()  
-                })
+                
                           
 }
+document.querySelector('.cmd').addEventListener('click',e=>{
+    if(submitButton.style.border=='2px solid green' && domicileInput.className=='checked'){
+    domicileSend()}
+    else if(submitButton.style.border=='2px solid green' && chez_nousInput.className=='checked')
+    chezNousSend()  
+})
 function chezNousSend(){
 const domicileObjectSend={
 Name:document.getElementById('name_prenom').value,
 phoneNbr:document.getElementById('tel').value,
 Date:document.getElementById('dateAndHour').value,
-Commande:shoppingCardProducts
+Commande:shoppingCardProducts,
+Price:priceToShow
 }
-console.log(domicileObjectSend)
-window.alert('La requete POST envoyée au serveur: '+JSON.stringify(domicileObjectSend))
+fetch("http://localhost:3000/chezNousSend", {
+    method: "post",
+    headers: {'Accept': 'application/json, text/plain, */*',
+    'Content-Type': 'application/json'},
+    body: JSON.stringify(domicileObjectSend)
+  })
+  .then(function(res){ console.log(res) })
+.catch(function(res){ console.log(res) })
+//window.alert('La requete POST envoyée au serveur: '+JSON.stringify(domicileObjectSend))
+location.reload()
 }
 function domicileSend(){
     let livreur
@@ -815,10 +771,19 @@ const chezNousObjectSend={
     Name:document.getElementById('name_prenom').value,
     phoneNbr:document.getElementById('tel').value,
     Date:document.getElementById('dateAndHour').value,
-    Commande:shoppingCardProducts,
     Livreur:livreur,
-    location:locationToSend
+    location:locationToSend,
+    Commande:shoppingCardProducts,
+    Price:priceToShow
 }
-console.log(chezNousObjectSend)
-window.alert('La requete POST envoyée au serveur: '+JSON.stringify(chezNousObjectSend))
+fetch("http://localhost:3000/domicileSend", {
+  method: "post",
+  headers: {'Accept': 'application/json, text/plain, */*',
+    'Content-Type': 'application/json'},
+  body: JSON.stringify(chezNousObjectSend)
+})
+.then( (response) => { 
+});
+//window.alert('La requete POST envoyée au serveur: '+JSON.stringify(chezNousObjectSend))
+location.reload()
 }

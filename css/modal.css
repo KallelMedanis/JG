@@ -775,10 +775,10 @@ background-image: url('../imgPag/Accueil.png');
 }
 
 
-/*input[type='checkbox'],input[type='radio']{
+input[type='checkbox'],input[type='radio']{
     display: none;
 }
-
+/*
 .RecSalade,
 .lastModal,
 .modalSalade1,

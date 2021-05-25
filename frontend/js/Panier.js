@@ -429,13 +429,14 @@ document.querySelector('.CommandePanier').addEventListener('click',e=>{
                 })
                 break;
             case 'ingrédientRemove':
+                console.log(shoppingCardProducts)
                 let ccs
                 shoppingCardProducts.forEach(a=>{
+                    console.log(a)
                     console.log(e.target.previousElementSibling.previousElementSibling.innerHTML.substr(11,e.target.previousElementSibling.previousElementSibling.innerHTML.length))
-                    if(a.Ingrédints.indexOf(e.target.previousElementSibling.previousElementSibling.innerHTML.substr(11,e.target.previousElementSibling.previousElementSibling.innerHTML.length))!=-1){
+                    if((a.Ingrédints.indexOf(e.target.previousElementSibling.previousElementSibling.innerHTML.substr(11,e.target.previousElementSibling.previousElementSibling.innerHTML.length)))!=-1){
                         console.log('_'+e.target.previousElementSibling.previousElementSibling.innerHTML.substr(11,e.target.previousElementSibling.previousElementSibling.innerHTML.length)+'/'+e.target.previousElementSibling.innerHTML)
                          ccs=a.Ingrédints.split(`_${e.target.previousElementSibling.previousElementSibling.innerHTML.substr(11,e.target.previousElementSibling.previousElementSibling.innerHTML.length)}`+'/'+`${e.target.previousElementSibling.innerHTML}`)
-
                     }
                     console.log(ccs)
                     let newCourseDessert=ccs.join('')
@@ -673,12 +674,12 @@ document.querySelector('.domicile').addEventListener('click',e=>{
                     }
             })
             document.querySelector('.utiliserMap').addEventListener('click',e=>{
+    let route,klmaa,klmaaa
                 console.log('mapamp')
                 window.setTimeout(now,0)
                 
                 function now(){
                     document.querySelectorAll('.APILocalisation1 input').forEach(a=>{
-                        
                         a.addEventListener('input',e=>{
                             verifyGreen()
                             console.log('d5alna1')
@@ -694,30 +695,33 @@ document.querySelector('.domicile').addEventListener('click',e=>{
             let patternRoute=/Sfax Route:([a-zA-Z]+)/
             patternRoute.test(e.target.value) ? routeDonnée1='Donnée validée' : routeDonnée1='Donnée non validée (ex:Sfax Route:Gremda)';locationBoolean=false;
             e.target.nextElementSibling.innerHTML=routeDonnée1
-            let route=e.target.value
+            route=e.target.value
+            console.log(route)
             break;
         case 'localKlmBtn':
             let patternKlm=/Klm:([1-9,.]+)/
             patternKlm.test(e.target.value) ? klmDonnée1='Donnée validée' : klmDonnée1='Donnée non validée (ex:klm:4)';locationBoolean=false;
             e.target.nextElementSibling.innerHTML=klmDonnée1
-            let klmaa=e.target.value
+            klmaa=e.target.value
             break;
         case 'localAproxBtn':
             let patternAppr=/A proximité de:([a-zA-Z]+)/
             patternAppr.test(e.target.value) ? aproxDonnée1='Donnée validée' : aproxDonnée1='Donnée non validée (ex:A proximité de:Anas+)';locationBoolean=false;   
             e.target.nextElementSibling.innerHTML=aproxDonnée1
-            let klmaaa=e.target.value
+            klmaaa=e.target.value
             break;
-            locationToSend=`Klm:${route}A proximité de:${klmaaa}Route:${klmaa}`
-            console.log(routeDonnée1 + klmDonnée1 + aproxDonnée1)
+          
     }
     if(routeDonnée1 === klmDonnée1 && aproxDonnée1==='Donnée validée'){
     locationBoolean=true
 }
     else
     locationBoolean=false
-    
+    console.log(route+klmaaa+klmaa)
+                        locationToSend=`${route} ${klmaa} ${klmaaa}`
                         })
+ 
+                        
                     })
                 }
             })
@@ -791,7 +795,6 @@ function verifyGreen(){
                 })
                           
 }
-
 function chezNousSend(){
 const domicileObjectSend={
 Name:document.getElementById('name_prenom').value,
@@ -799,7 +802,9 @@ phoneNbr:document.getElementById('tel').value,
 Date:document.getElementById('dateAndHour').value,
 Commande:shoppingCardProducts
 }
-window.alert('La requete POST envoyée au serveur: '+JSON.stringify(domicileObjectSend))}
+console.log(domicileObjectSend)
+window.alert('La requete POST envoyée au serveur: '+JSON.stringify(domicileObjectSend))
+}
 function domicileSend(){
     let livreur
     Array.from(document.querySelectorAll('.CompagnieDeLivraison ul li')).forEach(a=>{

@@ -98,6 +98,7 @@ let newTab
 //Begining
 const allModal=document.querySelectorAll('.modalLivraison,.modalMENUHidden,.modalLOCHidden,.imgSoupe,.imgIng,.RecSalade,.lastModal,.modalSalade1,.modalPetitDej,.PersSalade,.modalDessert,.modalWithBasket,.modalGeneral,.modalCommande')
 const openModal=function(e){
+    e.stopPropagation()
 newTab=[]
     const targetId=e.target.getAttribute("id")
     console.log(targetId)
@@ -137,6 +138,7 @@ document.querySelector('.close-button').removeEventListener("click",closeModal)
 }
 document.querySelectorAll('.Modal').forEach(a=>{
     a.addEventListener('click',e=>{
+        e.stopPropagation()
         if(e.target.value==='Ajouter un repas' && e.target.style.color!='gold'){
 
         }

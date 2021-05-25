@@ -650,9 +650,14 @@ padding: 20px 0;
     top: 50%;
     transform: translateY(-50%);
 }
+.redBorder{
+    border-radius: 20px;
+    margin: 20px 40px;
+    border: 1px solid red;
+}
 .modalLivraison h3{
-    font-size: 2em;
-    padding: 5px 15px;
+    font-size: 1.7em;
+    padding: 5px 10px;
 }
 .modalLivraison .Modal{
     position: relative;
@@ -668,7 +673,7 @@ padding: 20px 0;
     border: 0;
     outline: none;
     color: white;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-left: 50%;
     transform: translateX(-50%);
     font-size: 0.7em;

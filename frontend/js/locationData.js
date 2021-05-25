@@ -2,7 +2,7 @@ import { render } from "./render.js";
 const livreur=document.querySelector('.livreur')
 document.getElementById('chez_nous').addEventListener('click',e=>{
     console.log(e.target)
-    if(e.target.nextElementSibling.nextElementSibling.classList.contains('checked')==false)
+    /*if(e.target.nextElementSibling.nextElementSibling.classList.contains('checked')==false)
     e.target.classList.toggle('checked')
     console.log(e.target.className)
     if(e.target.classList.contains('checked')){
@@ -10,13 +10,30 @@ document.getElementById('chez_nous').addEventListener('click',e=>{
     livreur.innerHTML=render.renderChezNous()
     }
     else
-    e.target.nextElementSibling.style.backgroundColor=''
+    e.target.nextElementSibling.style.backgroundColor=''*/
+    e.target.classList.remove('checked')
+    e.target.nextElementSibling.nextElementSibling.classList.remove('checked')
+    e.target.nextElementSibling.nextElementSibling.nextElementSibling.style.backgroundColor='white'
+    e.target.nextElementSibling.style.backgroundColor='white'
+
+    e.target.classList.toggle('checked')
+    if(e.target.classList.contains('checked')){
+        e.target.nextElementSibling.style.backgroundColor='rgb(56, 197, 216)'
+        livreur.innerHTML=render.renderChezNous()
+        }
+        else
+        e.target.nextElementSibling.style.backgroundColor=''
 })
 document.getElementById('domicile').addEventListener('click',e=>{
-    console.log(e.target)
+    /*console.log(e.target)
     if(e.target.previousElementSibling.previousElementSibling.classList.contains('checked')==false)
     e.target.classList.toggle('checked')
-    console.log(e.target.className)
+    console.log(e.target.className)*/
+    e.target.classList.remove('checked')
+    e.target.previousElementSibling.previousElementSibling.classList.remove('checked')
+    e.target.classList.toggle('checked')
+    e.target.previousElementSibling.style.backgroundColor='white'
+    e.target.nextElementSibling.style.backgroundColor='white'
     if(e.target.classList.contains('checked')){
     e.target.nextElementSibling.style.backgroundColor='red'
     livreur.innerHTML=render.renderChezVous()
@@ -229,5 +246,4 @@ locationInput.forEach(a=>{
     }
     else
     e.target.nextElementSibling.style.backgroundColor=''
-    
 })

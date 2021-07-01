@@ -1,7 +1,7 @@
 const body=document.querySelector('body')
 document.addEventListener('DOMContentLoaded',chargingDataBase)
 function chargingDataBase(){
-    return fetch('http://192.168.1.17:3000/getBase', {
+    return fetch('http://localhost:3000/getBase', {
   method: 'GET',
   headers: {
     Accept: 'application/json',

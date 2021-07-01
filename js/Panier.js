@@ -750,7 +750,7 @@ Date:document.getElementById('dateAndHour').value,
 Commande:shoppingCardProducts,
 Price:priceToShow
 }
-fetch("http://192.168.1.17:3000/chezNousSend", {
+fetch("http://localhost:3000/chezNousSend", {
     method: "post",
     headers: {'Accept': 'application/json, text/plain, */*',
     'Content-Type': 'application/json'},
@@ -776,7 +776,7 @@ const chezNousObjectSend={
     Commande:shoppingCardProducts,
     Price:priceToShow
 }
-fetch("http://192.168.1.17:3000/domicileSend", {
+fetch("http://localhost:3000/domicileSend", {
   method: "post",
   headers: {'Accept': 'application/json, text/plain, */*',
     'Content-Type': 'application/json'},
